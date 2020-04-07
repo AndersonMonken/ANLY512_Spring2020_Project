@@ -1,4 +1,5 @@
 Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
+1981,Afghanistan,,,
 1982,Afghanistan,,,
 1983,Afghanistan,,,
 1984,Afghanistan,,,
@@ -37,6 +38,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Afghanistan,,,
 2018,Afghanistan,,,
 2019,Afghanistan,,,
+1981,Albania,,,
 1982,Albania,,,
 1983,Albania,,,
 1984,Albania,,,
@@ -75,6 +77,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Albania,,,7.575459
 2018,Albania,,,
 2019,Albania,,,
+1981,Algeria,,,
 1982,Algeria,,,
 1983,Algeria,,,
 1984,Algeria,,,
@@ -113,6 +116,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Algeria,,,4.311133
 2018,Algeria,,,
 2019,Algeria,,,
+1981,American Samoa,,,
 1982,American Samoa,,,
 1983,American Samoa,,,
 1984,American Samoa,,,
@@ -151,6 +155,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,American Samoa,,,
 2018,American Samoa,,,
 2019,American Samoa,,,
+1981,Andorra,,,
 1982,Andorra,,,
 1983,Andorra,,,
 1984,Andorra,,,
@@ -189,6 +194,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Andorra,,,
 2018,Andorra,,,
 2019,Andorra,,,
+1981,Angola,,,
 1982,Angola,,,
 1983,Angola,,,
 1984,Angola,,,
@@ -227,6 +233,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Angola,,,9.797091
 2018,Angola,,,
 2019,Angola,,,
+1981,Anguilla,,,
 1982,Anguilla,,,
 1983,Anguilla,,,
 1984,Anguilla,,,
@@ -265,6 +272,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Anguilla,,,
 2018,Anguilla,,,
 2019,Anguilla,,,
+1981,Antarctica,,,
 1982,Antarctica,,,
 1983,Antarctica,,,
 1984,Antarctica,,,
@@ -303,6 +311,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Antarctica,,,
 2018,Antarctica,,,
 2019,Antarctica,,,
+1981,Antigua and Barbuda,,,
 1982,Antigua and Barbuda,,,
 1983,Antigua and Barbuda,,,
 1984,Antigua and Barbuda,,,
@@ -341,6 +350,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Antigua and Barbuda,,,
 2018,Antigua and Barbuda,,,
 2019,Antigua and Barbuda,,,
+1981,Argentina,,,
 1982,Argentina,,,
 1983,Argentina,,,
 1984,Argentina,,,
@@ -379,6 +389,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Argentina,0.53019201749038,,4.458383
 2018,Argentina,,,
 2019,Argentina,,,
+1981,Armenia,,,
 1982,Armenia,,,
 1983,Armenia,,,
 1984,Armenia,,,
@@ -417,6 +428,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Armenia,,,4.88282
 2018,Armenia,,,
 2019,Armenia,,,
+1981,Aruba,,,
 1982,Aruba,,,
 1983,Aruba,,,
 1984,Aruba,,,
@@ -455,6 +467,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Aruba,,,
 2018,Aruba,,,
 2019,Aruba,,,
+1981,Australia,0.90254249352276,100.0,
 1982,Australia,1.02390487417703,100.0,
 1983,Australia,1.17914919532666,100.0,
 1984,Australia,1.13775579514159,100.0,
@@ -493,6 +506,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Australia,,100.0,2.970916
 2018,Australia,,,3.06424
 2019,Australia,,,
+1981,Austria,1.08998446539469,99.0,
 1982,Austria,1.1948537641831,99.0,
 1983,Austria,1.23623141956436,99.0,
 1984,Austria,1.24378836166898,99.0,
@@ -531,6 +545,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Austria,3.11658803193543,,5.970725
 2018,Austria,3.17491078964265,78.0,6.382928
 2019,Austria,3.21655508733149,,
+1981,Azerbaijan,,,
 1982,Azerbaijan,,,
 1983,Azerbaijan,,,
 1984,Azerbaijan,,,
@@ -569,6 +584,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Azerbaijan,,,4.991138
 2018,Azerbaijan,,,
 2019,Azerbaijan,,,
+1981,Bahamas,,,
 1982,Bahamas,,,
 1983,Bahamas,,,
 1984,Bahamas,,,
@@ -607,6 +623,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bahamas,,,
 2018,Bahamas,,,
 2019,Bahamas,,,
+1981,Bahrain,,,
 1982,Bahrain,,,
 1983,Bahrain,,,
 1984,Bahrain,,,
@@ -645,6 +662,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bahrain,,,2.126504
 2018,Bahrain,,,
 2019,Bahrain,,,
+1981,Bangladesh,,,
 1982,Bangladesh,,,
 1983,Bangladesh,,,
 1984,Bangladesh,,,
@@ -683,6 +701,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bangladesh,,,7.262294
 2018,Bangladesh,,,
 2019,Bangladesh,,,
+1981,Barbados,,,
 1982,Barbados,,,
 1983,Barbados,,,
 1984,Barbados,,,
@@ -721,6 +740,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Barbados,,,
 2018,Barbados,,,
 2019,Barbados,,,
+1981,Belarus,,,
 1982,Belarus,,,
 1983,Belarus,,,
 1984,Belarus,,,
@@ -759,6 +779,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Belarus,,,2.958501
 2018,Belarus,,,
 2019,Belarus,,,
+1981,Belgium,,99.7,
 1982,Belgium,1.50835664840746,99.1,
 1983,Belgium,1.56164812639193,98.6,
 1984,Belgium,1.57395403487419,98.0,
@@ -797,6 +818,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Belgium,2.52169552812555,,5.249585
 2018,Belgium,2.76404756819954,58.0,5.347434
 2019,Belgium,,,
+1981,Belize,,,
 1982,Belize,,,
 1983,Belize,,,
 1984,Belize,,,
@@ -835,6 +857,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Belize,,,
 2018,Belize,,,
 2019,Belize,,,
+1981,Benin,,,
 1982,Benin,,,
 1983,Benin,,,
 1984,Benin,,,
@@ -873,6 +896,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Benin,,,3.34933
 2018,Benin,,,
 2019,Benin,,,
+1981,Bermuda,,,
 1982,Bermuda,,,
 1983,Bermuda,,,
 1984,Bermuda,,,
@@ -911,6 +935,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bermuda,,,
 2018,Bermuda,,,
 2019,Bermuda,,,
+1981,Bhutan,,,
 1982,Bhutan,,,
 1983,Bhutan,,,
 1984,Bhutan,,,
@@ -949,6 +974,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bhutan,,,
 2018,Bhutan,,,
 2019,Bhutan,,,
+1981,"Bolivia, Plurinational State of",,,
 1982,"Bolivia, Plurinational State of",,,
 1983,"Bolivia, Plurinational State of",,,
 1984,"Bolivia, Plurinational State of",,,
@@ -987,6 +1013,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Bolivia, Plurinational State of",,,3.403914
 2018,"Bolivia, Plurinational State of",,,
 2019,"Bolivia, Plurinational State of",,,
+1981,"Bonaire, Sint Eustatius and Saba",,,
 1982,"Bonaire, Sint Eustatius and Saba",,,
 1983,"Bonaire, Sint Eustatius and Saba",,,
 1984,"Bonaire, Sint Eustatius and Saba",,,
@@ -1025,6 +1052,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Bonaire, Sint Eustatius and Saba",,,
 2018,"Bonaire, Sint Eustatius and Saba",,,
 2019,"Bonaire, Sint Eustatius and Saba",,,
+1981,Bosnia and Herzegovina,,,
 1982,Bosnia and Herzegovina,,,
 1983,Bosnia and Herzegovina,,,
 1984,Bosnia and Herzegovina,,,
@@ -1063,6 +1091,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bosnia and Herzegovina,,,1.763967
 2018,Bosnia and Herzegovina,,,
 2019,Bosnia and Herzegovina,,,
+1981,Botswana,,,
 1982,Botswana,,,
 1983,Botswana,,,
 1984,Botswana,,,
@@ -1101,6 +1130,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Botswana,,,4.524719
 2018,Botswana,,,
 2019,Botswana,,,
+1981,Bouvet Island,,,
 1982,Bouvet Island,,,
 1983,Bouvet Island,,,
 1984,Bouvet Island,,,
@@ -1139,6 +1169,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bouvet Island,,,
 2018,Bouvet Island,,,
 2019,Bouvet Island,,,
+1981,Brazil,,,
 1982,Brazil,,,
 1983,Brazil,,,
 1984,Brazil,,,
@@ -1177,6 +1208,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Brazil,,,6.777743
 2018,Brazil,,,
 2019,Brazil,,,
+1981,British Indian Ocean Territory,,,
 1982,British Indian Ocean Territory,,,
 1983,British Indian Ocean Territory,,,
 1984,British Indian Ocean Territory,,,
@@ -1215,6 +1247,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,British Indian Ocean Territory,,,
 2018,British Indian Ocean Territory,,,
 2019,British Indian Ocean Territory,,,
+1981,Brunei Darussalam,,,
 1982,Brunei Darussalam,,,
 1983,Brunei Darussalam,,,
 1984,Brunei Darussalam,,,
@@ -1253,6 +1286,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Brunei Darussalam,,,4.493966
 2018,Brunei Darussalam,,,
 2019,Brunei Darussalam,,,
+1981,Bulgaria,,,
 1982,Bulgaria,,,
 1983,Bulgaria,,,
 1984,Bulgaria,,,
@@ -1291,6 +1325,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Bulgaria,,,3.004391
 2018,Bulgaria,,,
 2019,Bulgaria,,,
+1981,Burkina Faso,,,
 1982,Burkina Faso,,,
 1983,Burkina Faso,,,
 1984,Burkina Faso,,,
@@ -1329,6 +1364,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Burkina Faso,,,
 2018,Burkina Faso,,,
 2019,Burkina Faso,,,
+1981,Burundi,,,
 1982,Burundi,,,
 1983,Burundi,,,
 1984,Burundi,,,
@@ -1367,6 +1403,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Burundi,,,
 2018,Burundi,,,
 2019,Burundi,,,
+1981,Cabo Verde,,,
 1982,Cabo Verde,,,
 1983,Cabo Verde,,,
 1984,Cabo Verde,,,
@@ -1405,6 +1442,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cabo Verde,,,
 2018,Cabo Verde,,,
 2019,Cabo Verde,,,
+1981,Cambodia,,,
 1982,Cambodia,,,
 1983,Cambodia,,,
 1984,Cambodia,,,
@@ -1443,6 +1481,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cambodia,,,5.323405
 2018,Cambodia,,,
 2019,Cambodia,,,
+1981,Cameroon,,,
 1982,Cameroon,,,
 1983,Cameroon,,,
 1984,Cameroon,,,
@@ -1481,6 +1520,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cameroon,,,12.95621
 2018,Cameroon,,,
 2019,Cameroon,,,
+1981,Canada,1.19856226822819,100.0,
 1982,Canada,1.34289783673098,100.0,
 1983,Canada,1.41655431707271,100.0,
 1984,Canada,1.36940745486962,100.0,
@@ -1519,6 +1559,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Canada,1.72872845939468,100.0,2.883898
 2018,Canada,1.56287097725752,,2.80859
 2019,Canada,1.54134739910612,,
+1981,Cayman Islands,,,
 1982,Cayman Islands,,,
 1983,Cayman Islands,,,
 1984,Cayman Islands,,,
@@ -1557,6 +1598,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cayman Islands,,,
 2018,Cayman Islands,,,
 2019,Cayman Islands,,,
+1981,Central African Republic,,,
 1982,Central African Republic,,,
 1983,Central African Republic,,,
 1984,Central African Republic,,,
@@ -1595,6 +1637,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Central African Republic,,,
 2018,Central African Republic,,,
 2019,Central African Republic,,,
+1981,Chad,,,
 1982,Chad,,,
 1983,Chad,,,
 1984,Chad,,,
@@ -1633,6 +1676,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Chad,,,
 2018,Chad,,,
 2019,Chad,,,
+1981,Chile,,,
 1982,Chile,,,
 1983,Chile,,,
 1984,Chile,,,
@@ -1671,6 +1715,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Chile,0.36949088430878,94.3,4.487085
 2018,Chile,,,4.578276
 2019,Chile,,,
+1981,China,,,
 1982,China,,,
 1983,China,,,
 1984,China,,,
@@ -1709,6 +1754,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,China,2.1183054703073,,2.239526
 2018,China,2.18568496389297,,
 2019,China,,,
+1981,Christmas Island,,,
 1982,Christmas Island,,,
 1983,Christmas Island,,,
 1984,Christmas Island,,,
@@ -1747,6 +1793,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Christmas Island,,,
 2018,Christmas Island,,,
 2019,Christmas Island,,,
+1981,Cocos (Keeling) Islands,,,
 1982,Cocos (Keeling) Islands,,,
 1983,Cocos (Keeling) Islands,,,
 1984,Cocos (Keeling) Islands,,,
@@ -1785,6 +1832,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cocos (Keeling) Islands,,,
 2018,Cocos (Keeling) Islands,,,
 2019,Cocos (Keeling) Islands,,,
+1981,Colombia,,,
 1982,Colombia,,,
 1983,Colombia,,,
 1984,Colombia,,,
@@ -1823,6 +1871,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Colombia,,94.7,8.449147
 2018,Colombia,,,
 2019,Colombia,,,
+1981,Comoros,,,
 1982,Comoros,,,
 1983,Comoros,,,
 1984,Comoros,,,
@@ -1861,6 +1910,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Comoros,,,
 2018,Comoros,,,
 2019,Comoros,,,
+1981,Congo,,,
 1982,Congo,,,
 1983,Congo,,,
 1984,Congo,,,
@@ -1899,6 +1949,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Congo,,,8.973301
 2018,Congo,,,
 2019,Congo,,,
+1981,"Congo, The Democratic Republic of the",,,
 1982,"Congo, The Democratic Republic of the",,,
 1983,"Congo, The Democratic Republic of the",,,
 1984,"Congo, The Democratic Republic of the",,,
@@ -1937,6 +1988,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Congo, The Democratic Republic of the",,,29.24829
 2018,"Congo, The Democratic Republic of the",,,
 2019,"Congo, The Democratic Republic of the",,,
+1981,Cook Islands,,,
 1982,Cook Islands,,,
 1983,Cook Islands,,,
 1984,Cook Islands,,,
@@ -1975,6 +2027,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cook Islands,,,
 2018,Cook Islands,,,
 2019,Cook Islands,,,
+1981,Costa Rica,,,
 1982,Costa Rica,,,
 1983,Costa Rica,,,
 1984,Costa Rica,,,
@@ -2013,6 +2066,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Costa Rica,,,9.867389
 2018,Costa Rica,,,
 2019,Costa Rica,,,
+1981,Croatia,,,
 1982,Croatia,,,
 1983,Croatia,,,
 1984,Croatia,,,
@@ -2051,6 +2105,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Croatia,,,5.542515
 2018,Croatia,,,
 2019,Croatia,,,
+1981,Cuba,,,
 1982,Cuba,,,
 1983,Cuba,,,
 1984,Cuba,,,
@@ -2089,6 +2144,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cuba,,,8.954074
 2018,Cuba,,,
 2019,Cuba,,,
+1981,Curaçao,,,
 1982,Curaçao,,,
 1983,Curaçao,,,
 1984,Curaçao,,,
@@ -2127,6 +2183,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Curaçao,,,
 2018,Curaçao,,,
 2019,Curaçao,,,
+1981,Cyprus,,,
 1982,Cyprus,,,
 1983,Cyprus,,,
 1984,Cyprus,,,
@@ -2165,6 +2222,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Cyprus,,,4.380744
 2018,Cyprus,,,
 2019,Cyprus,,,
+1981,Czechia,,100.0,
 1982,Czechia,,100.0,
 1983,Czechia,,100.0,
 1984,Czechia,,100.0,
@@ -2203,6 +2261,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Czechia,1.6801452450221,,3.311528
 2018,Czechia,1.93017092334522,,3.440298
 2019,Czechia,,,
+1981,Côte d'Ivoire,,,
 1982,Côte d'Ivoire,,,
 1983,Côte d'Ivoire,,,
 1984,Côte d'Ivoire,,,
@@ -2241,6 +2300,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Côte d'Ivoire,,,8.337629
 2018,Côte d'Ivoire,,,
 2019,Côte d'Ivoire,,,
+1981,Denmark,1.01374738923294,100.0,
 1982,Denmark,1.12655937970334,100.0,
 1983,Denmark,1.23666017906289,100.0,
 1984,Denmark,1.32718268801577,100.0,
@@ -2279,6 +2339,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Denmark,3.0928335625267,100.0,8.518507
 2018,Denmark,3.03292037646994,95.0,8.544552
 2019,Denmark,,,
+1981,Djibouti,,,
 1982,Djibouti,,,
 1983,Djibouti,,,
 1984,Djibouti,,,
@@ -2317,6 +2378,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Djibouti,,,
 2018,Djibouti,,,
 2019,Djibouti,,,
+1981,Dominica,,,
 1982,Dominica,,,
 1983,Dominica,,,
 1984,Dominica,,,
@@ -2355,6 +2417,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Dominica,,,
 2018,Dominica,,,
 2019,Dominica,,,
+1981,Dominican Republic,,,
 1982,Dominican Republic,,,
 1983,Dominican Republic,,,
 1984,Dominican Republic,,,
@@ -2393,6 +2456,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Dominican Republic,,,7.185755
 2018,Dominican Republic,,,
 2019,Dominican Republic,,,
+1981,Ecuador,,,
 1982,Ecuador,,,
 1983,Ecuador,,,
 1984,Ecuador,,,
@@ -2431,6 +2495,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Ecuador,,,5.011193
 2018,Ecuador,,,
 2019,Ecuador,,,
+1981,Egypt,,,
 1982,Egypt,,,
 1983,Egypt,,,
 1984,Egypt,,,
@@ -2469,6 +2534,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Egypt,,,4.819118
 2018,Egypt,,,
 2019,Egypt,,,
+1981,El Salvador,,,
 1982,El Salvador,,,
 1983,El Salvador,,,
 1984,El Salvador,,,
@@ -2507,6 +2573,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,El Salvador,,,7.905497
 2018,El Salvador,,,
 2019,El Salvador,,,
+1981,Equatorial Guinea,,,
 1982,Equatorial Guinea,,,
 1983,Equatorial Guinea,,,
 1984,Equatorial Guinea,,,
@@ -2545,6 +2612,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Equatorial Guinea,,,
 2018,Equatorial Guinea,,,
 2019,Equatorial Guinea,,,
+1981,Eritrea,,,
 1982,Eritrea,,,
 1983,Eritrea,,,
 1984,Eritrea,,,
@@ -2583,6 +2651,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Eritrea,,,13.17573
 2018,Eritrea,,,
 2019,Eritrea,,,
+1981,Estonia,,,
 1982,Estonia,,,
 1983,Estonia,,,
 1984,Estonia,,,
@@ -2621,6 +2690,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Estonia,1.24617197050576,94.5,2.341738
 2018,Estonia,1.40440947318264,,2.859002
 2019,Estonia,,,
+1981,Eswatini,,,
 1982,Eswatini,,,
 1983,Eswatini,,,
 1984,Eswatini,,,
@@ -2659,6 +2729,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Eswatini,,,
 2018,Eswatini,,,
 2019,Eswatini,,,
+1981,Ethiopia,,,
 1982,Ethiopia,,,
 1983,Ethiopia,,,
 1984,Ethiopia,,,
@@ -2697,6 +2768,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Ethiopia,,,13.76191
 2018,Ethiopia,,,
 2019,Ethiopia,,,
+1981,Falkland Islands (Malvinas),,,
 1982,Falkland Islands (Malvinas),,,
 1983,Falkland Islands (Malvinas),,,
 1984,Falkland Islands (Malvinas),,,
@@ -2735,6 +2807,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Falkland Islands (Malvinas),,,
 2018,Falkland Islands (Malvinas),,,
 2019,Falkland Islands (Malvinas),,,
+1981,Faroe Islands,,,
 1982,Faroe Islands,,,
 1983,Faroe Islands,,,
 1984,Faroe Islands,,,
@@ -2773,6 +2846,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Faroe Islands,,,
 2018,Faroe Islands,,,
 2019,Faroe Islands,,,
+1981,Fiji,,,
 1982,Fiji,,,
 1983,Fiji,,,
 1984,Fiji,,,
@@ -2811,6 +2885,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Fiji,,,
 2018,Fiji,,,
 2019,Fiji,,,
+1981,Finland,1.14639244697507,100.0,
 1982,Finland,1.43145354545455,100.0,
 1983,Finland,1.59917092753577,100.0,
 1984,Finland,1.68692122644574,100.0,
@@ -2849,6 +2924,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Finland,2.72484412646448,100.0,5.175704
 2018,Finland,2.74592348999586,55.0,5.132335
 2019,Finland,,,
+1981,France,1.86744478572899,99.2,
 1982,France,2.07420619634245,99.2,
 1983,France,2.11961879974859,99.2,
 1984,France,2.16147079182647,99.2,
@@ -2887,6 +2963,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,France,2.22238389099287,99.9,8.297476
 2018,France,2.20002460594367,76.0,8.83187
 2019,France,,,
+1981,French Guiana,,,
 1982,French Guiana,,,
 1983,French Guiana,,,
 1984,French Guiana,,,
@@ -2925,6 +3002,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,French Guiana,,,
 2018,French Guiana,,,
 2019,French Guiana,,,
+1981,French Polynesia,,,
 1982,French Polynesia,,,
 1983,French Polynesia,,,
 1984,French Polynesia,,,
@@ -2963,6 +3041,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,French Polynesia,,,
 2018,French Polynesia,,,
 2019,French Polynesia,,,
+1981,French Southern Territories,,,
 1982,French Southern Territories,,,
 1983,French Southern Territories,,,
 1984,French Southern Territories,,,
@@ -3001,6 +3080,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,French Southern Territories,,,
 2018,French Southern Territories,,,
 2019,French Southern Territories,,,
+1981,Gabon,,,
 1982,Gabon,,,
 1983,Gabon,,,
 1984,Gabon,,,
@@ -3039,6 +3119,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Gabon,,,
 2018,Gabon,,,
 2019,Gabon,,,
+1981,Gambia,,,
 1982,Gambia,,,
 1983,Gambia,,,
 1984,Gambia,,,
@@ -3077,6 +3158,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Gambia,,,
 2018,Gambia,,,
 2019,Gambia,,,
+1981,Georgia,,,
 1982,Georgia,,,
 1983,Georgia,,,
 1984,Georgia,,,
@@ -3115,6 +3197,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Georgia,,,4.063031
 2018,Georgia,,,
 2019,Georgia,,,
+1981,Germany,2.35161202484893,91.8,
 1982,Germany,2.42847360382166,91.8,
 1983,Germany,2.63058004117131,91.8,
 1984,Germany,2.72770647714364,91.2,
@@ -3153,6 +3236,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Germany,2.94098962168856,,5.067345
 2018,Germany,3.13266773712239,85.2,5.411249
 2019,Germany,,,
+1981,Ghana,,,
 1982,Ghana,,,
 1983,Ghana,,,
 1984,Ghana,,,
@@ -3191,6 +3275,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Ghana,,,8.38682
 2018,Ghana,,,
 2019,Ghana,,,
+1981,Gibraltar,,,
 1982,Gibraltar,,,
 1983,Gibraltar,,,
 1984,Gibraltar,,,
@@ -3229,6 +3314,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Gibraltar,,,
 2018,Gibraltar,,,
 2019,Gibraltar,,,
+1981,Greece,0.14767742043607,88.0,
 1982,Greece,,88.0,
 1983,Greece,0.23227256488643,100.0,
 1984,Greece,,100.0,
@@ -3267,6 +3353,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Greece,0.99393756516436,,4.101412
 2018,Greece,1.17731986988824,,4.2928
 2019,Greece,,,
+1981,Greenland,,,
 1982,Greenland,,,
 1983,Greenland,,,
 1984,Greenland,,,
@@ -3305,6 +3392,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Greenland,,,
 2018,Greenland,,,
 2019,Greenland,,,
+1981,Grenada,,,
 1982,Grenada,,,
 1983,Grenada,,,
 1984,Grenada,,,
@@ -3343,6 +3431,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Grenada,,,
 2018,Grenada,,,
 2019,Grenada,,,
+1981,Guadeloupe,,,
 1982,Guadeloupe,,,
 1983,Guadeloupe,,,
 1984,Guadeloupe,,,
@@ -3381,6 +3470,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guadeloupe,,,
 2018,Guadeloupe,,,
 2019,Guadeloupe,,,
+1981,Guam,,,
 1982,Guam,,,
 1983,Guam,,,
 1984,Guam,,,
@@ -3419,6 +3509,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guam,,,
 2018,Guam,,,
 2019,Guam,,,
+1981,Guatemala,,,
 1982,Guatemala,,,
 1983,Guatemala,,,
 1984,Guatemala,,,
@@ -3457,6 +3548,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guatemala,,,7.832469
 2018,Guatemala,,,
 2019,Guatemala,,,
+1981,Guernsey,,,
 1982,Guernsey,,,
 1983,Guernsey,,,
 1984,Guernsey,,,
@@ -3495,6 +3587,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guernsey,,,
 2018,Guernsey,,,
 2019,Guernsey,,,
+1981,Guinea,,,
 1982,Guinea,,,
 1983,Guinea,,,
 1984,Guinea,,,
@@ -3533,6 +3626,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guinea,,,
 2018,Guinea,,,
 2019,Guinea,,,
+1981,Guinea-Bissau,,,
 1982,Guinea-Bissau,,,
 1983,Guinea-Bissau,,,
 1984,Guinea-Bissau,,,
@@ -3571,6 +3665,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guinea-Bissau,,,
 2018,Guinea-Bissau,,,
 2019,Guinea-Bissau,,,
+1981,Guyana,,,
 1982,Guyana,,,
 1983,Guyana,,,
 1984,Guyana,,,
@@ -3609,6 +3704,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Guyana,,,
 2018,Guyana,,,
 2019,Guyana,,,
+1981,Haiti,,,
 1982,Haiti,,,
 1983,Haiti,,,
 1984,Haiti,,,
@@ -3647,6 +3743,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Haiti,,,5.400063
 2018,Haiti,,,
 2019,Haiti,,,
+1981,Heard Island and McDonald Islands,,,
 1982,Heard Island and McDonald Islands,,,
 1983,Heard Island and McDonald Islands,,,
 1984,Heard Island and McDonald Islands,,,
@@ -3685,6 +3782,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Heard Island and McDonald Islands,,,
 2018,Heard Island and McDonald Islands,,,
 2019,Heard Island and McDonald Islands,,,
+1981,Holy See (Vatican City State),,,
 1982,Holy See (Vatican City State),,,
 1983,Holy See (Vatican City State),,,
 1984,Holy See (Vatican City State),,,
@@ -3723,6 +3821,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Holy See (Vatican City State),,,
 2018,Holy See (Vatican City State),,,
 2019,Holy See (Vatican City State),,,
+1981,Honduras,,,
 1982,Honduras,,,
 1983,Honduras,,,
 1984,Honduras,,,
@@ -3761,6 +3860,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Honduras,,,4.37849
 2018,Honduras,,,
 2019,Honduras,,,
+1981,Hong Kong,,,
 1982,Hong Kong,,,
 1983,Hong Kong,,,
 1984,Hong Kong,,,
@@ -3799,6 +3899,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Hong Kong,,,
 2018,Hong Kong,,,
 2019,Hong Kong,,,
+1981,Hungary,,100.0,
 1982,Hungary,,100.0,
 1983,Hungary,,100.0,
 1984,Hungary,,100.0,
@@ -3837,6 +3938,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Hungary,1.19007099583916,,5.519348
 2018,Hungary,1.53336948589025,,5.783438
 2019,Hungary,,,
+1981,Iceland,0.63390215294867,100.0,
 1982,Iceland,0.71182512336782,100.0,
 1983,Iceland,0.70666278590882,100.0,
 1984,Iceland,0.74521330558398,100.0,
@@ -3875,6 +3977,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Iceland,2.12768982587657,100.0,7.424449
 2018,Iceland,2.02993964451508,99.8,8.188895
 2019,Iceland,,,
+1981,India,,,
 1982,India,,,
 1983,India,,,
 1984,India,,,
@@ -3913,6 +4016,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,India,,,3.903132
 2018,India,,,
 2019,India,,,
+1981,Indonesia,,,
 1982,Indonesia,,,
 1983,Indonesia,,,
 1984,Indonesia,,,
@@ -3951,6 +4055,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Indonesia,,,5.829842
 2018,Indonesia,,,
 2019,Indonesia,,,
+1981,"Iran, Islamic Republic of",,,
 1982,"Iran, Islamic Republic of",,,
 1983,"Iran, Islamic Republic of",,,
 1984,"Iran, Islamic Republic of",,,
@@ -3989,6 +4094,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Iran, Islamic Republic of",,,2.661121
 2018,"Iran, Islamic Republic of",,,
 2019,"Iran, Islamic Republic of",,,
+1981,Iraq,,,
 1982,Iraq,,,
 1983,Iraq,,,
 1984,Iraq,,,
@@ -4027,6 +4133,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Iraq,,,4.162783
 2018,Iraq,,,
 2019,Iraq,,,
+1981,Ireland,0.64809735927972,100.0,
 1982,Ireland,0.6767905837262,100.0,
 1983,Ireland,0.7956692198439,100.0,
 1984,Ireland,0.79206567655117,100.0,
@@ -4065,6 +4172,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Ireland,1.16891847410002,100.0,8.582808
 2018,Ireland,1.14646980687964,,9.544537
 2019,Ireland,,,
+1981,Isle of Man,,,
 1982,Isle of Man,,,
 1983,Isle of Man,,,
 1984,Isle of Man,,,
@@ -4103,6 +4211,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Isle of Man,,,
 2018,Isle of Man,,,
 2019,Isle of Man,,,
+1981,Israel,,,
 1982,Israel,,,
 1983,Israel,,,
 1984,Israel,,,
@@ -4141,6 +4250,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Israel,4.51177214593335,100.0,4.4173
 2018,Israel,4.94078810781133,,4.685102
 2019,Israel,,,
+1981,Italy,0.82826820814055,100.0,
 1982,Italy,0.95182849313034,100.0,
 1983,Italy,1.06732131572188,100.0,
 1984,Italy,1.11997052755935,100.0,
@@ -4179,6 +4289,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Italy,1.36658099147901,,6.441442
 2018,Italy,1.39239736189898,87.0,6.643069
 2019,Italy,,,
+1981,Jamaica,,,
 1982,Jamaica,,,
 1983,Jamaica,,,
 1984,Jamaica,,,
@@ -4217,6 +4328,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Jamaica,,,3.346097
 2018,Jamaica,,,
 2019,Jamaica,,,
+1981,Japan,2.04693690117981,100.0,
 1982,Japan,2.33195931728817,100.0,
 1983,Japan,2.44409290504669,100.0,
 1984,Japan,2.50098741848741,100.0,
@@ -4255,6 +4367,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Japan,3.15521774433083,,4.263072
 2018,Japan,3.26423842784753,,4.430745
 2019,Japan,,,
+1981,Jersey,,,
 1982,Jersey,,,
 1983,Jersey,,,
 1984,Jersey,,,
@@ -4293,6 +4406,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Jersey,,,
 2018,Jersey,,,
 2019,Jersey,,,
+1981,Jordan,,,
 1982,Jordan,,,
 1983,Jordan,,,
 1984,Jordan,,,
@@ -4331,6 +4445,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Jordan,,,3.111249
 2018,Jordan,,,
 2019,Jordan,,,
+1981,Kazakhstan,,,
 1982,Kazakhstan,,,
 1983,Kazakhstan,,,
 1984,Kazakhstan,,,
@@ -4369,6 +4484,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Kazakhstan,,,1.663368
 2018,Kazakhstan,,,
 2019,Kazakhstan,,,
+1981,Kenya,,,
 1982,Kenya,,,
 1983,Kenya,,,
 1984,Kenya,,,
@@ -4407,6 +4523,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Kenya,,,8.957007
 2018,Kenya,,,
 2019,Kenya,,,
+1981,Kiribati,,,
 1982,Kiribati,,,
 1983,Kiribati,,,
 1984,Kiribati,,,
@@ -4445,6 +4562,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Kiribati,,,
 2018,Kiribati,,,
 2019,Kiribati,,,
+1981,"Korea, Democratic People's Republic of",,,
 1982,"Korea, Democratic People's Republic of",,,
 1983,"Korea, Democratic People's Republic of",,,
 1984,"Korea, Democratic People's Republic of",,,
@@ -4483,6 +4601,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Korea, Democratic People's Republic of",,,
 2018,"Korea, Democratic People's Republic of",,,
 2019,"Korea, Democratic People's Republic of",,,
+1981,"Korea, Republic of",,44.6,
 1982,"Korea, Republic of",,48.6,
 1983,"Korea, Republic of",,50.2,
 1984,"Korea, Republic of",,52.1,
@@ -4521,6 +4640,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Korea, Republic of",3.98703718069077,,3.083849
 2018,"Korea, Republic of",4.52753369761642,,3.043452
 2019,"Korea, Republic of",,,
+1981,Kuwait,,,
 1982,Kuwait,,,
 1983,Kuwait,,,
 1984,Kuwait,,,
@@ -4559,6 +4679,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Kuwait,,,2.932856
 2018,Kuwait,,,
 2019,Kuwait,,,
+1981,Kyrgyzstan,,,
 1982,Kyrgyzstan,,,
 1983,Kyrgyzstan,,,
 1984,Kyrgyzstan,,,
@@ -4597,6 +4718,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Kyrgyzstan,,,2.312709
 2018,Kyrgyzstan,,,
 2019,Kyrgyzstan,,,
+1981,Lao People's Democratic Republic,,,
 1982,Lao People's Democratic Republic,,,
 1983,Lao People's Democratic Republic,,,
 1984,Lao People's Democratic Republic,,,
@@ -4635,6 +4757,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Lao People's Democratic Republic,,,
 2018,Lao People's Democratic Republic,,,
 2019,Lao People's Democratic Republic,,,
+1981,Latvia,,,
 1982,Latvia,,,
 1983,Latvia,,,
 1984,Latvia,,,
@@ -4673,6 +4796,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Latvia,0.4403206571371,100.0,7.001089
 2018,Latvia,0.63874243894641,,6.7416
 2019,Latvia,,,
+1981,Lebanon,,,
 1982,Lebanon,,,
 1983,Lebanon,,,
 1984,Lebanon,,,
@@ -4711,6 +4835,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Lebanon,,,2.885694
 2018,Lebanon,,,
 2019,Lebanon,,,
+1981,Lesotho,,,
 1982,Lesotho,,,
 1983,Lesotho,,,
 1984,Lesotho,,,
@@ -4749,6 +4874,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Lesotho,,,
 2018,Lesotho,,,
 2019,Lesotho,,,
+1981,Liberia,,,
 1982,Liberia,,,
 1983,Liberia,,,
 1984,Liberia,,,
@@ -4787,6 +4913,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Liberia,,,
 2018,Liberia,,,
 2019,Liberia,,,
+1981,Libya,,,
 1982,Libya,,,
 1983,Libya,,,
 1984,Libya,,,
@@ -4825,6 +4952,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Libya,,,2.688677
 2018,Libya,,,
 2019,Libya,,,
+1981,Liechtenstein,,,
 1982,Liechtenstein,,,
 1983,Liechtenstein,,,
 1984,Liechtenstein,,,
@@ -4863,6 +4991,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Liechtenstein,,,
 2018,Liechtenstein,,,
 2019,Liechtenstein,,,
+1981,Lithuania,,,
 1982,Lithuania,,,
 1983,Lithuania,,,
 1984,Lithuania,,,
@@ -4901,6 +5030,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Lithuania,0.84233369986857,98.1,7.384852
 2018,Lithuania,0.87665627423597,,7.094876
 2019,Lithuania,,,
+1981,Luxembourg,,,
 1982,Luxembourg,,,
 1983,Luxembourg,,,
 1984,Luxembourg,,,
@@ -4939,6 +5069,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Luxembourg,1.25831021950752,,6.002834
 2018,Luxembourg,1.21126173008073,,5.910486
 2019,Luxembourg,,,
+1981,Macao,,,
 1982,Macao,,,
 1983,Macao,,,
 1984,Macao,,,
@@ -4977,6 +5108,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Macao,,,
 2018,Macao,,,
 2019,Macao,,,
+1981,Madagascar,,,
 1982,Madagascar,,,
 1983,Madagascar,,,
 1984,Madagascar,,,
@@ -5015,6 +5147,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Madagascar,,,
 2018,Madagascar,,,
 2019,Madagascar,,,
+1981,Malawi,,,
 1982,Malawi,,,
 1983,Malawi,,,
 1984,Malawi,,,
@@ -5053,6 +5186,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Malawi,,,
 2018,Malawi,,,
 2019,Malawi,,,
+1981,Malaysia,,,
 1982,Malaysia,,,
 1983,Malaysia,,,
 1984,Malaysia,,,
@@ -5091,6 +5225,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Malaysia,,,3.937201
 2018,Malaysia,,,
 2019,Malaysia,,,
+1981,Maldives,,,
 1982,Maldives,,,
 1983,Maldives,,,
 1984,Maldives,,,
@@ -5129,6 +5264,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Maldives,,,
 2018,Maldives,,,
 2019,Maldives,,,
+1981,Mali,,,
 1982,Mali,,,
 1983,Mali,,,
 1984,Mali,,,
@@ -5167,6 +5303,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mali,,,
 2018,Mali,,,
 2019,Mali,,,
+1981,Malta,,,
 1982,Malta,,,
 1983,Malta,,,
 1984,Malta,,,
@@ -5205,6 +5342,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Malta,,,11.25368
 2018,Malta,,,
 2019,Malta,,,
+1981,Marshall Islands,,,
 1982,Marshall Islands,,,
 1983,Marshall Islands,,,
 1984,Marshall Islands,,,
@@ -5243,6 +5381,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Marshall Islands,,,
 2018,Marshall Islands,,,
 2019,Marshall Islands,,,
+1981,Martinique,,,
 1982,Martinique,,,
 1983,Martinique,,,
 1984,Martinique,,,
@@ -5281,6 +5420,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Martinique,,,
 2018,Martinique,,,
 2019,Martinique,,,
+1981,Mauritania,,,
 1982,Mauritania,,,
 1983,Mauritania,,,
 1984,Mauritania,,,
@@ -5319,6 +5459,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mauritania,,,
 2018,Mauritania,,,
 2019,Mauritania,,,
+1981,Mauritius,,,
 1982,Mauritius,,,
 1983,Mauritius,,,
 1984,Mauritius,,,
@@ -5357,6 +5498,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mauritius,,,6.018772
 2018,Mauritius,,,
 2019,Mauritius,,,
+1981,Mayotte,,,
 1982,Mayotte,,,
 1983,Mayotte,,,
 1984,Mayotte,,,
@@ -5395,6 +5537,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mayotte,,,
 2018,Mayotte,,,
 2019,Mayotte,,,
+1981,Mexico,,,
 1982,Mexico,,,
 1983,Mexico,,,
 1984,Mexico,,,
@@ -5433,6 +5576,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mexico,0.38798441953059,,4.742103
 2018,Mexico,0.31291387949426,,4.888616
 2019,Mexico,,,
+1981,"Micronesia, Federated States of",,,
 1982,"Micronesia, Federated States of",,,
 1983,"Micronesia, Federated States of",,,
 1984,"Micronesia, Federated States of",,,
@@ -5471,6 +5615,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Micronesia, Federated States of",,,
 2018,"Micronesia, Federated States of",,,
 2019,"Micronesia, Federated States of",,,
+1981,"Moldova, Republic of",,,
 1982,"Moldova, Republic of",,,
 1983,"Moldova, Republic of",,,
 1984,"Moldova, Republic of",,,
@@ -5509,6 +5654,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Moldova, Republic of",,,2.879506
 2018,"Moldova, Republic of",,,
 2019,"Moldova, Republic of",,,
+1981,Monaco,,,
 1982,Monaco,,,
 1983,Monaco,,,
 1984,Monaco,,,
@@ -5547,6 +5693,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Monaco,,,
 2018,Monaco,,,
 2019,Monaco,,,
+1981,Mongolia,,,
 1982,Mongolia,,,
 1983,Mongolia,,,
 1984,Mongolia,,,
@@ -5585,6 +5732,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mongolia,,,1.839099
 2018,Mongolia,,,
 2019,Mongolia,,,
+1981,Montenegro,,,
 1982,Montenegro,,,
 1983,Montenegro,,,
 1984,Montenegro,,,
@@ -5623,6 +5771,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Montenegro,,,4.516369
 2018,Montenegro,,,
 2019,Montenegro,,,
+1981,Montserrat,,,
 1982,Montserrat,,,
 1983,Montserrat,,,
 1984,Montserrat,,,
@@ -5661,6 +5810,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Montserrat,,,
 2018,Montserrat,,,
 2019,Montserrat,,,
+1981,Morocco,,,
 1982,Morocco,,,
 1983,Morocco,,,
 1984,Morocco,,,
@@ -5699,6 +5849,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Morocco,,,4.570432
 2018,Morocco,,,
 2019,Morocco,,,
+1981,Mozambique,,,
 1982,Mozambique,,,
 1983,Mozambique,,,
 1984,Mozambique,,,
@@ -5737,6 +5888,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Mozambique,,,4.331227
 2018,Mozambique,,,
 2019,Mozambique,,,
+1981,Myanmar,,,
 1982,Myanmar,,,
 1983,Myanmar,,,
 1984,Myanmar,,,
@@ -5775,6 +5927,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Myanmar,,,9.648595
 2018,Myanmar,,,
 2019,Myanmar,,,
+1981,Namibia,,,
 1982,Namibia,,,
 1983,Namibia,,,
 1984,Namibia,,,
@@ -5813,6 +5966,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Namibia,,,5.884032
 2018,Namibia,,,
 2019,Namibia,,,
+1981,Nauru,,,
 1982,Nauru,,,
 1983,Nauru,,,
 1984,Nauru,,,
@@ -5851,6 +6005,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Nauru,,,
 2018,Nauru,,,
 2019,Nauru,,,
+1981,Nepal,,,
 1982,Nepal,,,
 1983,Nepal,,,
 1984,Nepal,,,
@@ -5889,6 +6044,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Nepal,,,
 2018,Nepal,,,
 2019,Nepal,,,
+1981,Netherlands,1.62199374435355,67.3,
 1982,Netherlands,1.70045624254433,66.7,
 1983,Netherlands,1.93709308575799,66.5,
 1984,Netherlands,2.02265161644754,66.3,
@@ -5927,6 +6083,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Netherlands,1.99684655750017,,5.25095
 2018,Netherlands,2.16374110348445,71.0,5.658875
 2019,Netherlands,,,
+1981,New Caledonia,,,
 1982,New Caledonia,,,
 1983,New Caledonia,,,
 1984,New Caledonia,,,
@@ -5965,6 +6122,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,New Caledonia,,,
 2018,New Caledonia,,,
 2019,New Caledonia,,,
+1981,New Zealand,0.97147581645308,100.0,
 1982,New Zealand,,100.0,
 1983,New Zealand,,100.0,
 1984,New Zealand,,100.0,
@@ -6003,6 +6161,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,New Zealand,,100.0,5.196581
 2018,New Zealand,,100.0,5.597792
 2019,New Zealand,,,
+1981,Nicaragua,,,
 1982,Nicaragua,,,
 1983,Nicaragua,,,
 1984,Nicaragua,,,
@@ -6041,6 +6200,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Nicaragua,,,6.331742
 2018,Nicaragua,,,
 2019,Nicaragua,,,
+1981,Niger,,,
 1982,Niger,,,
 1983,Niger,,,
 1984,Niger,,,
@@ -6079,6 +6239,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Niger,,,9.507504
 2018,Niger,,,
 2019,Niger,,,
+1981,Nigeria,,,
 1982,Nigeria,,,
 1983,Nigeria,,,
 1984,Nigeria,,,
@@ -6117,6 +6278,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Nigeria,,,11.63575
 2018,Nigeria,,,
 2019,Nigeria,,,
+1981,Niue,,,
 1982,Niue,,,
 1983,Niue,,,
 1984,Niue,,,
@@ -6155,6 +6317,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Niue,,,
 2018,Niue,,,
 2019,Niue,,,
+1981,Norfolk Island,,,
 1982,Norfolk Island,,,
 1983,Norfolk Island,,,
 1984,Norfolk Island,,,
@@ -6193,6 +6356,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Norfolk Island,,,
 2018,Norfolk Island,,,
 2019,Norfolk Island,,,
+1981,North Macedonia,,,
 1982,North Macedonia,,,
 1983,North Macedonia,,,
 1984,North Macedonia,,,
@@ -6231,6 +6395,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,North Macedonia,,,3.650054
 2018,North Macedonia,,,
 2019,North Macedonia,,,
+1981,Northern Mariana Islands,,,
 1982,Northern Mariana Islands,,,
 1983,Northern Mariana Islands,,,
 1984,Northern Mariana Islands,,,
@@ -6269,6 +6434,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Northern Mariana Islands,,,
 2018,Northern Mariana Islands,,,
 2019,Northern Mariana Islands,,,
+1981,Norway,1.15442463693074,100.0,
 1982,Norway,1.34779638529002,100.0,
 1983,Norway,,100.0,
 1984,Norway,1.60704075605434,100.0,
@@ -6307,6 +6473,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Norway,2.04460213004673,100.0,9.178429
 2018,Norway,2.07263952691412,100.0,8.632253
 2019,Norway,,,
+1981,Oman,,,
 1982,Oman,,,
 1983,Oman,,,
 1984,Oman,,,
@@ -6345,6 +6512,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Oman,,,2.604756
 2018,Oman,,,
 2019,Oman,,,
+1981,Pakistan,,,
 1982,Pakistan,,,
 1983,Pakistan,,,
 1984,Pakistan,,,
@@ -6383,6 +6551,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Pakistan,,,5.296469
 2018,Pakistan,,,
 2019,Pakistan,,,
+1981,Palau,,,
 1982,Palau,,,
 1983,Palau,,,
 1984,Palau,,,
@@ -6421,6 +6590,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Palau,,,
 2018,Palau,,,
 2019,Palau,,,
+1981,"Palestine, State of",,,
 1982,"Palestine, State of",,,
 1983,"Palestine, State of",,,
 1984,"Palestine, State of",,,
@@ -6459,6 +6629,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Palestine, State of",,,
 2018,"Palestine, State of",,,
 2019,"Palestine, State of",,,
+1981,Panama,,,
 1982,Panama,,,
 1983,Panama,,,
 1984,Panama,,,
@@ -6497,6 +6668,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Panama,,,9.309198
 2018,Panama,,,
 2019,Panama,,,
+1981,Papua New Guinea,,,
 1982,Papua New Guinea,,,
 1983,Papua New Guinea,,,
 1984,Papua New Guinea,,,
@@ -6535,6 +6707,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Papua New Guinea,,,
 2018,Papua New Guinea,,,
 2019,Papua New Guinea,,,
+1981,Paraguay,,,
 1982,Paraguay,,,
 1983,Paraguay,,,
 1984,Paraguay,,,
@@ -6573,6 +6746,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Paraguay,,,10.36044
 2018,Paraguay,,,
 2019,Paraguay,,,
+1981,Peru,,,
 1982,Peru,,,
 1983,Peru,,,
 1984,Peru,,,
@@ -6611,6 +6785,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Peru,,,7.746703
 2018,Peru,,,
 2019,Peru,,,
+1981,Philippines,,,
 1982,Philippines,,,
 1983,Philippines,,,
 1984,Philippines,,,
@@ -6649,6 +6824,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Philippines,,,6.174407
 2018,Philippines,,,
 2019,Philippines,,,
+1981,Pitcairn,,,
 1982,Pitcairn,,,
 1983,Pitcairn,,,
 1984,Pitcairn,,,
@@ -6687,6 +6863,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Pitcairn,,,
 2018,Pitcairn,,,
 2019,Pitcairn,,,
+1981,Poland,,,
 1982,Poland,,,
 1983,Poland,,,
 1984,Poland,,,
@@ -6725,6 +6902,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Poland,0.96408238356111,,3.282793
 2018,Poland,1.21252282244774,,3.411494
 2019,Poland,,,
+1981,Portugal,,100.0,
 1982,Portugal,0.30629725617123,100.0,
 1983,Portugal,0.34280504613241,100.0,
 1984,Portugal,0.36666751509792,100.0,
@@ -6763,6 +6941,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Portugal,1.2807493273721,,5.703617
 2018,Portugal,1.35022914429519,18.0,6.408622
 2019,Portugal,,,
+1981,Puerto Rico,,,
 1982,Puerto Rico,,,
 1983,Puerto Rico,,,
 1984,Puerto Rico,,,
@@ -6801,6 +6980,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Puerto Rico,,,
 2018,Puerto Rico,,,
 2019,Puerto Rico,,,
+1981,Qatar,,,
 1982,Qatar,,,
 1983,Qatar,,,
 1984,Qatar,,,
@@ -6839,6 +7019,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Qatar,,,3.773151
 2018,Qatar,,,
 2019,Qatar,,,
+1981,Romania,,,
 1982,Romania,,,
 1983,Romania,,,
 1984,Romania,,,
@@ -6877,6 +7058,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Romania,0.48032570444395,,6.299661
 2018,Romania,0.50510251740007,,
 2019,Romania,,,
+1981,Russian Federation,,,
 1982,Russian Federation,,,
 1983,Russian Federation,,,
 1984,Russian Federation,,,
@@ -6915,6 +7097,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Russian Federation,1.09727830150956,99.6,2.239651
 2018,Russian Federation,0.98988175883168,,
 2019,Russian Federation,,,
+1981,Rwanda,,,
 1982,Rwanda,,,
 1983,Rwanda,,,
 1984,Rwanda,,,
@@ -6953,6 +7136,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Rwanda,,,
 2018,Rwanda,,,
 2019,Rwanda,,,
+1981,Réunion,,,
 1982,Réunion,,,
 1983,Réunion,,,
 1984,Réunion,,,
@@ -6991,6 +7175,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Réunion,,,
 2018,Réunion,,,
 2019,Réunion,,,
+1981,Saint Barthélemy,,,
 1982,Saint Barthélemy,,,
 1983,Saint Barthélemy,,,
 1984,Saint Barthélemy,,,
@@ -7029,6 +7214,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Barthélemy,,,
 2018,Saint Barthélemy,,,
 2019,Saint Barthélemy,,,
+1981,"Saint Helena, Ascension and Tristan da Cunha",,,
 1982,"Saint Helena, Ascension and Tristan da Cunha",,,
 1983,"Saint Helena, Ascension and Tristan da Cunha",,,
 1984,"Saint Helena, Ascension and Tristan da Cunha",,,
@@ -7067,6 +7253,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Saint Helena, Ascension and Tristan da Cunha",,,
 2018,"Saint Helena, Ascension and Tristan da Cunha",,,
 2019,"Saint Helena, Ascension and Tristan da Cunha",,,
+1981,Saint Kitts and Nevis,,,
 1982,Saint Kitts and Nevis,,,
 1983,Saint Kitts and Nevis,,,
 1984,Saint Kitts and Nevis,,,
@@ -7105,6 +7292,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Kitts and Nevis,,,
 2018,Saint Kitts and Nevis,,,
 2019,Saint Kitts and Nevis,,,
+1981,Saint Lucia,,,
 1982,Saint Lucia,,,
 1983,Saint Lucia,,,
 1984,Saint Lucia,,,
@@ -7143,6 +7331,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Lucia,,,
 2018,Saint Lucia,,,
 2019,Saint Lucia,,,
+1981,Saint Martin (French part),,,
 1982,Saint Martin (French part),,,
 1983,Saint Martin (French part),,,
 1984,Saint Martin (French part),,,
@@ -7181,6 +7370,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Martin (French part),,,
 2018,Saint Martin (French part),,,
 2019,Saint Martin (French part),,,
+1981,Saint Pierre and Miquelon,,,
 1982,Saint Pierre and Miquelon,,,
 1983,Saint Pierre and Miquelon,,,
 1984,Saint Pierre and Miquelon,,,
@@ -7219,6 +7409,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Pierre and Miquelon,,,
 2018,Saint Pierre and Miquelon,,,
 2019,Saint Pierre and Miquelon,,,
+1981,Saint Vincent and the Grenadines,,,
 1982,Saint Vincent and the Grenadines,,,
 1983,Saint Vincent and the Grenadines,,,
 1984,Saint Vincent and the Grenadines,,,
@@ -7257,6 +7448,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saint Vincent and the Grenadines,,,
 2018,Saint Vincent and the Grenadines,,,
 2019,Saint Vincent and the Grenadines,,,
+1981,Samoa,,,
 1982,Samoa,,,
 1983,Samoa,,,
 1984,Samoa,,,
@@ -7295,6 +7487,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Samoa,,,
 2018,Samoa,,,
 2019,Samoa,,,
+1981,San Marino,,,
 1982,San Marino,,,
 1983,San Marino,,,
 1984,San Marino,,,
@@ -7333,6 +7526,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,San Marino,,,
 2018,San Marino,,,
 2019,San Marino,,,
+1981,Sao Tome and Principe,,,
 1982,Sao Tome and Principe,,,
 1983,Sao Tome and Principe,,,
 1984,Sao Tome and Principe,,,
@@ -7371,6 +7565,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sao Tome and Principe,,,
 2018,Sao Tome and Principe,,,
 2019,Sao Tome and Principe,,,
+1981,Saudi Arabia,,,
 1982,Saudi Arabia,,,
 1983,Saudi Arabia,,,
 1984,Saudi Arabia,,,
@@ -7409,6 +7604,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Saudi Arabia,,,2.970521
 2018,Saudi Arabia,,,
 2019,Saudi Arabia,,,
+1981,Senegal,,,
 1982,Senegal,,,
 1983,Senegal,,,
 1984,Senegal,,,
@@ -7447,6 +7643,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Senegal,,,5.873486
 2018,Senegal,,,
 2019,Senegal,,,
+1981,Serbia,,,
 1982,Serbia,,,
 1983,Serbia,,,
 1984,Serbia,,,
@@ -7485,6 +7682,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Serbia,,,2.227849
 2018,Serbia,,,
 2019,Serbia,,,
+1981,Seychelles,,,
 1982,Seychelles,,,
 1983,Seychelles,,,
 1984,Seychelles,,,
@@ -7523,6 +7721,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Seychelles,,,
 2018,Seychelles,,,
 2019,Seychelles,,,
+1981,Sierra Leone,,,
 1982,Sierra Leone,,,
 1983,Sierra Leone,,,
 1984,Sierra Leone,,,
@@ -7561,6 +7760,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sierra Leone,,,
 2018,Sierra Leone,,,
 2019,Sierra Leone,,,
+1981,Singapore,,,
 1982,Singapore,,,
 1983,Singapore,,,
 1984,Singapore,,,
@@ -7599,6 +7799,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Singapore,2.08010250061446,,10.17688
 2018,Singapore,,,
 2019,Singapore,,,
+1981,Sint Maarten (Dutch part),,,
 1982,Sint Maarten (Dutch part),,,
 1983,Sint Maarten (Dutch part),,,
 1984,Sint Maarten (Dutch part),,,
@@ -7637,6 +7838,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sint Maarten (Dutch part),,,
 2018,Sint Maarten (Dutch part),,,
 2019,Sint Maarten (Dutch part),,,
+1981,Slovakia,,,
 1982,Slovakia,,,
 1983,Slovakia,,,
 1984,Slovakia,,,
@@ -7675,6 +7877,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Slovakia,0.79077963787997,,5.048364
 2018,Slovakia,0.83698055797686,,5.276114
 2019,Slovakia,,,
+1981,Slovenia,,,
 1982,Slovenia,,,
 1983,Slovenia,,,
 1984,Slovenia,,,
@@ -7713,6 +7916,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Slovenia,2.01144966602719,,4.672486
 2018,Slovenia,1.95039351084346,,4.860045
 2019,Slovenia,,,
+1981,Solomon Islands,,,
 1982,Solomon Islands,,,
 1983,Solomon Islands,,,
 1984,Solomon Islands,,,
@@ -7751,6 +7955,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Solomon Islands,,,
 2018,Solomon Islands,,,
 2019,Solomon Islands,,,
+1981,Somalia,,,
 1982,Somalia,,,
 1983,Somalia,,,
 1984,Somalia,,,
@@ -7789,6 +7994,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Somalia,,,
 2018,Somalia,,,
 2019,Somalia,,,
+1981,South Africa,,,
 1982,South Africa,,,
 1983,South Africa,,,
 1984,South Africa,0.73750115754411,,
@@ -7827,6 +8033,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,South Africa,0.81882256922786,,1.617694
 2018,South Africa,,,
 2019,South Africa,,,
+1981,South Georgia and the South Sandwich Islands,,,
 1982,South Georgia and the South Sandwich Islands,,,
 1983,South Georgia and the South Sandwich Islands,,,
 1984,South Georgia and the South Sandwich Islands,,,
@@ -7865,6 +8072,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,South Georgia and the South Sandwich Islands,,,
 2018,South Georgia and the South Sandwich Islands,,,
 2019,South Georgia and the South Sandwich Islands,,,
+1981,South Sudan,,,
 1982,South Sudan,,,
 1983,South Sudan,,,
 1984,South Sudan,,,
@@ -7903,6 +8111,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,South Sudan,,,
 2018,South Sudan,,,
 2019,South Sudan,,,
+1981,Spain,0.388859371883,86.4,
 1982,Spain,0.45612500729252,,
 1983,Spain,0.56163081392552,,
 1984,Spain,0.58568121170496,,
@@ -7941,6 +8150,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Spain,1.19047619047619,100.0,6.187382
 2018,Spain,1.24322800082849,54.0,6.576692
 2019,Spain,,,
+1981,Sri Lanka,,,
 1982,Sri Lanka,,,
 1983,Sri Lanka,,,
 1984,Sri Lanka,,,
@@ -7979,6 +8189,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sri Lanka,,,10.64294
 2018,Sri Lanka,,,
 2019,Sri Lanka,,,
+1981,Sudan,,,
 1982,Sudan,,,
 1983,Sudan,,,
 1984,Sudan,,,
@@ -8017,6 +8228,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sudan,,,
 2018,Sudan,,,
 2019,Sudan,,,
+1981,Suriname,,,
 1982,Suriname,,,
 1983,Suriname,,,
 1984,Suriname,,,
@@ -8055,6 +8267,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Suriname,,,3.952418
 2018,Suriname,,,
 2019,Suriname,,,
+1981,Svalbard and Jan Mayen,,,
 1982,Svalbard and Jan Mayen,,,
 1983,Svalbard and Jan Mayen,,,
 1984,Svalbard and Jan Mayen,,,
@@ -8093,6 +8306,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Svalbard and Jan Mayen,,,
 2018,Svalbard and Jan Mayen,,,
 2019,Svalbard and Jan Mayen,,,
+1981,Sweden,2.04524815759995,100.0,
 1982,Sweden,,100.0,
 1983,Sweden,,100.0,
 1984,Sweden,2.6548116706307,100.0,
@@ -8131,6 +8345,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Sweden,3.24679633289468,,12.24026
 2018,Sweden,3.30901702017795,100.0,13.01893
 2019,Sweden,,,
+1981,Switzerland,1.97350617617045,97.4,
 1982,Switzerland,,97.7,
 1983,Switzerland,2.524304386651,97.8,
 1984,Switzerland,,98.0,
@@ -8169,6 +8384,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Switzerland,,,12.5761
 2018,Switzerland,,74.0,13.44141
 2019,Switzerland,,,
+1981,Syrian Arab Republic,,,
 1982,Syrian Arab Republic,,,
 1983,Syrian Arab Republic,,,
 1984,Syrian Arab Republic,,,
@@ -8207,6 +8423,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Syrian Arab Republic,,,1.267422
 2018,Syrian Arab Republic,,,
 2019,Syrian Arab Republic,,,
+1981,"Taiwan, Province of China",,,
 1982,"Taiwan, Province of China",,,
 1983,"Taiwan, Province of China",,,
 1984,"Taiwan, Province of China",,,
@@ -8245,6 +8462,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Taiwan, Province of China",3.15409591020767,,
 2018,"Taiwan, Province of China",3.46192952327709,,
 2019,"Taiwan, Province of China",,,
+1981,Tajikistan,,,
 1982,Tajikistan,,,
 1983,Tajikistan,,,
 1984,Tajikistan,,,
@@ -8283,6 +8501,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Tajikistan,,,4.351773
 2018,Tajikistan,,,
 2019,Tajikistan,,,
+1981,"Tanzania, United Republic of",,,
 1982,"Tanzania, United Republic of",,,
 1983,"Tanzania, United Republic of",,,
 1984,"Tanzania, United Republic of",,,
@@ -8321,6 +8540,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Tanzania, United Republic of",,,14.41075
 2018,"Tanzania, United Republic of",,,
 2019,"Tanzania, United Republic of",,,
+1981,Thailand,,,
 1982,Thailand,,,
 1983,Thailand,,,
 1984,Thailand,,,
@@ -8359,6 +8579,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Thailand,,,4.520128
 2018,Thailand,,,
 2019,Thailand,,,
+1981,Timor-Leste,,,
 1982,Timor-Leste,,,
 1983,Timor-Leste,,,
 1984,Timor-Leste,,,
@@ -8397,6 +8618,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Timor-Leste,,,
 2018,Timor-Leste,,,
 2019,Timor-Leste,,,
+1981,Togo,,,
 1982,Togo,,,
 1983,Togo,,,
 1984,Togo,,,
@@ -8435,6 +8657,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Togo,,,5.539866
 2018,Togo,,,
 2019,Togo,,,
+1981,Tokelau,,,
 1982,Tokelau,,,
 1983,Tokelau,,,
 1984,Tokelau,,,
@@ -8473,6 +8696,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Tokelau,,,
 2018,Tokelau,,,
 2019,Tokelau,,,
+1981,Tonga,,,
 1982,Tonga,,,
 1983,Tonga,,,
 1984,Tonga,,,
@@ -8511,6 +8735,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Tonga,,,
 2018,Tonga,,,
 2019,Tonga,,,
+1981,Trinidad and Tobago,,,
 1982,Trinidad and Tobago,,,
 1983,Trinidad and Tobago,,,
 1984,Trinidad and Tobago,,,
@@ -8549,6 +8774,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Trinidad and Tobago,,,2.150685
 2018,Trinidad and Tobago,,,
 2019,Trinidad and Tobago,,,
+1981,Tunisia,,,
 1982,Tunisia,,,
 1983,Tunisia,,,
 1984,Tunisia,,,
@@ -8587,6 +8813,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Tunisia,,,4.688412
 2018,Tunisia,,,
 2019,Tunisia,,,
+1981,Turkey,,39.9,
 1982,Turkey,,39.8,
 1983,Turkey,,40.9,
 1984,Turkey,,42.1,
@@ -8625,6 +8852,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Turkey,0.94464285083045,,5.202332
 2018,Turkey,,,5.457846
 2019,Turkey,,,
+1981,Turkmenistan,,,
 1982,Turkmenistan,,,
 1983,Turkmenistan,,,
 1984,Turkmenistan,,,
@@ -8663,6 +8891,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Turkmenistan,,,1.339705
 2018,Turkmenistan,,,
 2019,Turkmenistan,,,
+1981,Turks and Caicos Islands,,,
 1982,Turks and Caicos Islands,,,
 1983,Turks and Caicos Islands,,,
 1984,Turks and Caicos Islands,,,
@@ -8701,6 +8930,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Turks and Caicos Islands,,,
 2018,Turks and Caicos Islands,,,
 2019,Turks and Caicos Islands,,,
+1981,Tuvalu,,,
 1982,Tuvalu,,,
 1983,Tuvalu,,,
 1984,Tuvalu,,,
@@ -8739,6 +8969,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Tuvalu,,,
 2018,Tuvalu,,,
 2019,Tuvalu,,,
+1981,Uganda,,,
 1982,Uganda,,,
 1983,Uganda,,,
 1984,Uganda,,,
@@ -8777,6 +9008,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Uganda,,,
 2018,Uganda,,,
 2019,Uganda,,,
+1981,Ukraine,,,
 1982,Ukraine,,,
 1983,Ukraine,,,
 1984,Ukraine,,,
@@ -8815,6 +9047,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Ukraine,,,1.919744
 2018,Ukraine,,,
 2019,Ukraine,,,
+1981,United Arab Emirates,,,
 1982,United Arab Emirates,,,
 1983,United Arab Emirates,,,
 1984,United Arab Emirates,,,
@@ -8853,6 +9086,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,United Arab Emirates,,,3.153148
 2018,United Arab Emirates,,,
 2019,United Arab Emirates,,,
+1981,United Kingdom,2.23851199435123,100.0,
 1982,United Kingdom,,100.0,
 1983,United Kingdom,2.10157660896247,100.0,
 1984,United Kingdom,2.02230434353514,100.0,
@@ -8891,6 +9125,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,United Kingdom,1.66023295659839,,7.240742
 2018,United Kingdom,1.70594661067394,100.0,7.452312
 2019,United Kingdom,,,
+1981,United States,2.26843355091701,,
 1982,United States,2.54790388578598,,
 1983,United States,2.63256476799113,,
 1984,United States,2.60887578387363,,
@@ -8929,6 +9164,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,United States,2.76029332558199,90.6,3.655257
 2018,United States,2.82578570698675,,3.659036
 2019,United States,,,
+1981,United States Minor Outlying Islands,,,
 1982,United States Minor Outlying Islands,,,
 1983,United States Minor Outlying Islands,,,
 1984,United States Minor Outlying Islands,,,
@@ -8967,6 +9203,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,United States Minor Outlying Islands,,,
 2018,United States Minor Outlying Islands,,,
 2019,United States Minor Outlying Islands,,,
+1981,Uruguay,,,
 1982,Uruguay,,,
 1983,Uruguay,,,
 1984,Uruguay,,,
@@ -9005,6 +9242,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Uruguay,,,11.84117
 2018,Uruguay,,,
 2019,Uruguay,,,
+1981,Uzbekistan,,,
 1982,Uzbekistan,,,
 1983,Uzbekistan,,,
 1984,Uzbekistan,,,
@@ -9043,6 +9281,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Uzbekistan,,,2.360991
 2018,Uzbekistan,,,
 2019,Uzbekistan,,,
+1981,Vanuatu,,,
 1982,Vanuatu,,,
 1983,Vanuatu,,,
 1984,Vanuatu,,,
@@ -9081,6 +9320,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Vanuatu,,,
 2018,Vanuatu,,,
 2019,Vanuatu,,,
+1981,"Venezuela, Bolivarian Republic of",,,
 1982,"Venezuela, Bolivarian Republic of",,,
 1983,"Venezuela, Bolivarian Republic of",,,
 1984,"Venezuela, Bolivarian Republic of",,,
@@ -9119,6 +9359,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Venezuela, Bolivarian Republic of",,,2.889685
 2018,"Venezuela, Bolivarian Republic of",,,
 2019,"Venezuela, Bolivarian Republic of",,,
+1981,Viet Nam,,,
 1982,Viet Nam,,,
 1983,Viet Nam,,,
 1984,Viet Nam,,,
@@ -9157,6 +9398,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Viet Nam,,,3.020232
 2018,Viet Nam,,,
 2019,Viet Nam,,,
+1981,"Virgin Islands, British",,,
 1982,"Virgin Islands, British",,,
 1983,"Virgin Islands, British",,,
 1984,"Virgin Islands, British",,,
@@ -9195,6 +9437,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Virgin Islands, British",,,
 2018,"Virgin Islands, British",,,
 2019,"Virgin Islands, British",,,
+1981,"Virgin Islands, U.S.",,,
 1982,"Virgin Islands, U.S.",,,
 1983,"Virgin Islands, U.S.",,,
 1984,"Virgin Islands, U.S.",,,
@@ -9233,6 +9476,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,"Virgin Islands, U.S.",,,
 2018,"Virgin Islands, U.S.",,,
 2019,"Virgin Islands, U.S.",,,
+1981,Wallis and Futuna,,,
 1982,Wallis and Futuna,,,
 1983,Wallis and Futuna,,,
 1984,Wallis and Futuna,,,
@@ -9271,6 +9515,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Wallis and Futuna,,,
 2018,Wallis and Futuna,,,
 2019,Wallis and Futuna,,,
+1981,Western Sahara,,,
 1982,Western Sahara,,,
 1983,Western Sahara,,,
 1984,Western Sahara,,,
@@ -9309,6 +9554,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Western Sahara,,,
 2018,Western Sahara,,,
 2019,Western Sahara,,,
+1981,Yemen,,,
 1982,Yemen,,,
 1983,Yemen,,,
 1984,Yemen,,,
@@ -9347,6 +9593,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Yemen,,,7.349467
 2018,Yemen,,,
 2019,Yemen,,,
+1981,Zambia,,,
 1982,Zambia,,,
 1983,Zambia,,,
 1984,Zambia,,,
@@ -9385,6 +9632,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Zambia,,,10.15172
 2018,Zambia,,,
 2019,Zambia,,,
+1981,Zimbabwe,,,
 1982,Zimbabwe,,,
 1983,Zimbabwe,,,
 1984,Zimbabwe,,,
@@ -9423,6 +9671,7 @@ Year,Country,Percent_GDP_on_RD,Percent_Pop_HI,GDP_per_unit_CO2
 2017,Zimbabwe,,,3.686835
 2018,Zimbabwe,,,
 2019,Zimbabwe,,,
+1981,Åland Islands,,,
 1982,Åland Islands,,,
 1983,Åland Islands,,,
 1984,Åland Islands,,,
