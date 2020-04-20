@@ -18,11 +18,11 @@ summary(mergedata)
 # good. The data is cleaned. We can proceed to the next stage of the analysis. 
 ```
 
+# DATA EXPLORATORY ANALYSIS
 ```{r}
 ## DATA EXPLORATORY ANALYSIS: 
 head(mergedata)
 summary(mergedata$Max_Partners)
-
 # find top 10, middle 10, and bottom 10 with respect to the trading partners (Max_Partners var) in 2016
 ######################################
 library(dplyr)
@@ -149,11 +149,42 @@ avg10_bottom<- ggplot(data = avg_bottom10, mapping = aes(x = reorder(Country, Ma
 
 ggarrange(avg10_bottom,avg10_top)
 
+```
+
+# Correlation Matrix: 
+```{r}
+library(corrplot)
+library(PerformanceAnalytics)
+res <- cor(mergedata[,3:17])
+round(res, 2)
+
+corrplot(res, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
+
+
+chart.Correlation(res, histogram=TRUE, pch=19)
+
+###
+# In the above plot:
+# 
+# The distribution of each variable is shown on the diagonal.
+# On the bottom of the diagonal : the bivariate scatter plots with a fitted line are displayed
+# On the top of the diagonal : the value of the correlation plus the significance level as stars
+# Each significance level is associated to a symbol : p-values(0, 0.001, 0.01, 0.05, 0.1, 1) <=> symbols(“***”, “**”, “*”, “.”, " “)
+###
+
+```
+
+# Specific Cases: Thailand & South-Korea:
+
+```{r}
 ##############################
 ## Cases of Thailand and South Korea: 
 
 data_thailand <- subset(mergedata, Country == "Thailand")
 data_southkorea <- subset(mergedata, Country == "Korea, Republic of")
+
+data_koreathailand <- subset(mergedata, Country == "Thailand" | Country == "Korea, Republic of")
 head(data_thailand)
 
 old.par <- par(mfrow=c(2, 3))
@@ -174,6 +205,53 @@ plot(data_southkorea$intl_tourist_arrival,data_southkorea$Max_Partners, col = "g
 plot(data_southkorea$mobilesub_per100peeps,data_southkorea$Max_Partners, col = "green",xlab = "Mobile Subscription per 100 People", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
 par(old.par2)
 
+```
+
+# Interactive Charts for selected countries: 
+```{r}
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+
+data_interactive <- subset(mergedata, Country == "Thailand" | Country == "Korea, Republic of" | Country == "Malaysia" | Country == "Poland" | Country == "Mexico")
+
+
+myPlot <- ggplot(data_interactive, aes(mobilesub_per100peeps,Max_Partners, size = total_life_exp, color = Country))+        geom_point() +
+  scale_x_log10() +
+  theme_bw()  +
+  # gganimate specific bits:
+  labs(title = 'Year: {frame_time}', x = 'Mobile Subscription per 100 people', y ='Number of Trading Partners') +     transition_time(Year) +
+  ease_aes('linear')
+
+# Save at gif: 
+animate(myPlot, duration = 5, fps = 20, width = 350, height = 200, renderer = gifski_renderer())
+anim_save("output.gif")
+```
+
+```{r}
+library(gapminder)
+library(gganimate)
+library(gifski)
+
+## standard ggplot2
+myPlot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+
+animate(myPlot, duration = 5, fps = 20, width = 200, height = 200, renderer = gifski_renderer())
+anim_save("output.gif")
+
+```
+# Principal Component Analysis:
+
+```{r}
 ############ Principal Component Analysis: 
 
 ## First, we need to use the stationary data over the entire time span to do PCA instead of using time-series data.
@@ -232,7 +310,6 @@ pr.out3 = prcomp(samp3, scale = TRUE)
 pr.out3$rotation
 
 biplot(pr.out3, scale = 0)
-
 ```
 
 # MODELING: SIMPLE LINEAR REGRESSION
