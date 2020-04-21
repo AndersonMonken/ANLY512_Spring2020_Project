@@ -1,0 +1,510 @@
+---
+title: "Project 512 Spring 2020"
+author: "Vid Chan"
+date: "4/18/2020"
+output: html_document
+---
+
+```{r}
+mergedata <- read.csv("/Users/vidarithchan/Desktop/MSAnalytics/ANLY 512/merged.csv")
+
+colnames(mergedata)
+nrow(mergedata)
+ncol(mergedata)
+
+# find missing-value count in each column
+# confirming if Nicole has already cleaned the data
+summary(mergedata)
+# good. The data is cleaned. We can proceed to the next stage of the analysis. 
+```
+
+# DATA EXPLORATORY ANALYSIS
+```{r}
+## DATA EXPLORATORY ANALYSIS: 
+head(mergedata)
+summary(mergedata$Max_Partners)
+# find top 10, middle 10, and bottom 10 with respect to the trading partners (Max_Partners var) in 2016
+######################################
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+#####################################
+
+mergedata_2016 <- subset(mergedata, Year == 2016, select = c(Country,Max_Partners, Year))
+mergedata_1990 <- subset(mergedata, Year == 1990, select = c(Country,Max_Partners, Year))
+
+# top n by country for Max_Partners
+top10_2016 <- mergedata %>%
+  filter(Year == 2016) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+top10_1990 <- mergedata %>%
+  filter(Year == 1990) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+top10_1997 <- mergedata %>%
+  filter(Year == 1997) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+top10_2005 <- mergedata %>%
+  filter(Year == 2005) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+top10_2009 <- mergedata %>%
+  filter(Year == 2009) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+top10_2012 <- mergedata %>%
+  filter(Year == 2012) %>%
+  top_n(n = 10, wt = Max_Partners)
+
+g90<- ggplot(data = top10_1990, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 1990")
+
+
+g97<- ggplot(data = top10_1997, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 1997")
+
+g05<- ggplot(data = top10_2005, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 2005")
+
+g09<- ggplot(data = top10_2009, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 2009")
+
+g12 <- ggplot(data = top10_2012, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 2012")
+
+g16<- ggplot(data = top10_2016, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Top 10 Countries in 2016")
+
+
+#####################
+library(ggpubr)
+#####################
+
+ggarrange(g90,g97,g05,g09,g12,g16)
+
+####################
+
+bottom10_2016 <- mergedata %>%
+  filter(Year == 2016) %>%
+  top_n(n = -10, wt = Max_Partners) #top_n with neg value can be used to find the bottom values
+
+bottom10_1990 <- mergedata %>%
+  filter(Year == 1990) %>%
+  top_n(n = -10, wt = Max_Partners)
+
+bottom10_1997 <- mergedata %>%
+  filter(Year == 1997) %>%
+  top_n(n = -10, wt = Max_Partners)
+
+bottom10_2005 <- mergedata %>%
+  filter(Year == 2005) %>%
+  top_n(n = -10, wt = Max_Partners)
+
+bottom10_2009 <- mergedata %>%
+  filter(Year == 2009) %>%
+  top_n(n = -10, wt = Max_Partners)
+
+bottom10_2012 <- mergedata %>%
+  filter(Year == 2012) %>%
+  top_n(n = -10, wt = Max_Partners)
+
+b90<- ggplot(data = bottom10_1990, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 1990")
+
+
+b97<- ggplot(data = bottom10_1997, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 1997")
+
+b05<- ggplot(data = bottom10_2005, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 2005")
+
+b09<- ggplot(data = bottom10_2009, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 2009")
+
+b12 <- ggplot(data = bottom10_2012, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 2012")
+
+b16<- ggplot(data = bottom10_2016, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Number of Trading Partners")+ggtitle("Lowest 10 Countries in 2016")
+
+#######
+ggarrange(b90,b97,b05,b09,b12,b16)
+
+#######
+# Average across the time span:
+avg_partners <- mergedata %>% group_by(Country) %>% summarise_at(vars(Max_Partners),funs(mean(.,na.rm=TRUE)))
+
+avg_top10 <- avg_partners %>%
+  top_n(n = 10, wt = Max_Partners)
+
+avg_bottom10 <- avg_partners %>% top_n(n = -10, wt = Max_Partners)
+
+avg10_top<- ggplot(data = avg_top10, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Avg Number of Trading Partners")+ggtitle("Top 10 Countries: 1990-2016")
+
+avg10_bottom<- ggplot(data = avg_bottom10, mapping = aes(x = reorder(Country, Max_Partners), Max_Partners)) + 
+  geom_bar(stat = "identity", width = 0.3) + coord_flip() +xlab("Country") + ylab("Avg Number of Trading Partners")+ggtitle("Lowest 10 Countries: 1990-2016")
+
+ggarrange(avg10_bottom,avg10_top)
+
+```
+
+# Correlation Matrix: 
+```{r}
+library(corrplot)
+library(PerformanceAnalytics)
+res <- cor(mergedata[,3:17])
+round(res, 2)
+
+corrplot(res, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
+
+
+chart.Correlation(res, histogram=TRUE, pch=19)
+
+###
+# In the above plot:
+# 
+# The distribution of each variable is shown on the diagonal.
+# On the bottom of the diagonal : the bivariate scatter plots with a fitted line are displayed
+# On the top of the diagonal : the value of the correlation plus the significance level as stars
+# Each significance level is associated to a symbol : p-values(0, 0.001, 0.01, 0.05, 0.1, 1) <=> symbols(“***”, “**”, “*”, “.”, " “)
+###
+
+```
+
+# Specific Cases: Thailand & South-Korea:
+
+```{r}
+##############################
+## Cases of Thailand and South Korea: 
+
+data_thailand <- subset(mergedata, Country == "Thailand")
+data_southkorea <- subset(mergedata, Country == "Korea, Republic of")
+
+data_koreathailand <- subset(mergedata, Country == "Thailand" | Country == "Korea, Republic of")
+head(data_thailand)
+
+old.par <- par(mfrow=c(2, 3))
+plot(data_thailand$gdp_per_cap,data_thailand$Max_Partners, col = "red",xlab = "GDP Per Capita (US Dollars)",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+plot(data_thailand$GDP_per_unit_CO2,data_thailand$Max_Partners, col = "red",xlab = "GDP per CO2 unit",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+plot(data_thailand$agri_perc_gdp,data_thailand$Max_Partners, col = "red",xlab = "Agricultural Percentage of GDP",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+plot(data_thailand$total_life_exp,data_thailand$Max_Partners, col = "red",xlab = "Average Life Expectancy",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+plot(data_thailand$intl_tourist_arrival,data_thailand$Max_Partners, col = "red",xlab = "Total Intl Tourist Arrival",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+plot(data_thailand$mobilesub_per100peeps,data_thailand$Max_Partners, col = "red",xlab = "Mobile Subscription per 100 People",ylab = "Number of Trading Partners", main = "Case 1: Thailand")
+par(old.par)
+
+old.par2 <- par(mfrow=c(2, 3))
+plot(data_southkorea$gdp_per_cap,data_southkorea$Max_Partners, col = "green",xlab = "GDP Per Capita (US Dollars)", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+plot(data_southkorea$GDP_per_unit_CO2,data_southkorea$Max_Partners, col = "green",xlab = "GDP per CO2 unit", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+plot(data_southkorea$agri_perc_gdp,data_southkorea$Max_Partners, col = "green",xlab = "Agricultural Percentage of GDP", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+plot(data_southkorea$total_life_exp,data_southkorea$Max_Partners, col = "green",xlab = "Average Life Expectancy", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+plot(data_southkorea$intl_tourist_arrival,data_southkorea$Max_Partners, col = "green",xlab = "Total Intl Tourist Arrival", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+plot(data_southkorea$mobilesub_per100peeps,data_southkorea$Max_Partners, col = "green",xlab = "Mobile Subscription per 100 People", ylab = "Number of Trading Partners", main = "Case 2: South Korea")
+par(old.par2)
+
+```
+
+# Interactive Charts for selected countries: 
+```{r}
+library(gapminder)
+library(ggplot2)
+library(gganimate)
+library(gifski)
+
+data_interactive <- subset(mergedata, Country == "Thailand" | Country == "Korea, Republic of" | Country == "Malaysia" | Country == "Poland" | Country == "Mexico")
+
+
+myPlot <- ggplot(data_interactive, aes(mobilesub_per100peeps,Max_Partners, size = total_life_exp, color = Country))+        geom_point() +
+  scale_x_log10() +
+  theme_bw()  +
+  # gganimate specific bits:
+  labs(title = 'Year: {frame_time}', x = 'Mobile Subscription per 100 people', y ='Number of Trading Partners') +           transition_time(Year) +
+  ease_aes('linear')
+
+# Save at gif: 
+animate(myPlot, duration = 5, fps = 20, width = 350, height = 200, renderer = gifski_renderer())
+anim_save("output.gif")
+```
+
+```{r}
+library(gapminder)
+library(gganimate)
+library(gifski)
+
+## standard ggplot2
+myPlot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
+  geom_point(alpha = 0.7, show.legend = FALSE) +
+  scale_colour_manual(values = country_colors) +
+  scale_size(range = c(2, 12)) +
+  scale_x_log10() +
+  # Here comes the gganimate specific bits
+  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
+  transition_time(year) +
+  ease_aes('linear')
+
+animate(myPlot, duration = 5, fps = 20, width = 200, height = 200, renderer = gifski_renderer())
+anim_save("output.gif")
+
+```
+# Principal Component Analysis:
+
+```{r}
+############ Principal Component Analysis: 
+
+## First, we need to use the stationary data over the entire time span to do PCA instead of using time-series data.
+
+avg_all <- mergedata %>% group_by(Country) %>% summarise_at(vars(Max_Partners:trade_perGDP), mean, na.rm=TRUE)
+avg_all <- data.frame(avg_all)
+
+avg_all$ID <- seq.int(nrow(avg_all))
+country_id <- subset(avg_all, select=c("Country","ID"))
+
+sapply(avg_all, class) # check to see if numeric before PCA.
+
+# remove "country"
+
+avg_all_no_countryname <- subset(avg_all, select=c(-Country))
+
+# turning the ID column into row name instead of a column
+samp2 <- avg_all_no_countryname[,-19]
+rownames(samp2) <- avg_all_no_countryname[,19]
+
+pca_data <- subset(samp2, select = c(-Max_Partners))
+pr.out = prcomp(pca_data, scale = TRUE)
+
+names(pr.out)
+
+pr.out$center
+pr.out$scale
+pr.out$rotation
+
+biplot(pr.out, scale = 0)
+
+
+#### Instead of doing PCA for all variables, we are going to include some selected variables from the exploratory analysis section. 
+
+subset_pcadata <- subset(mergedata,select =c("Country", "Year", "gdp_per_cap","GDP_per_unit_CO2","agri_perc_gdp","total_life_exp","intl_tourist_arrival","mobilesub_per100peeps","agg.empl.agri.perc"))
+
+subset_pcaavg <- subset_pcadata %>% group_by(Country) %>% summarise_at(vars(gdp_per_cap:agg.empl.agri.perc),mean,na.rm=TRUE)
+
+subset_pcaavg <- data.frame(subset_pcaavg)
+
+subset_pcaavg$ID <- seq.int(nrow(subset_pcaavg))
+country_id2 <- subset(subset_pcaavg, select=c("Country","ID"))
+
+sapply(subset_pcaavg, class) # check to see if numeric before PCA.
+
+# remove "country"
+
+subset_pca_no_countryname <- subset(subset_pcaavg, select=c(-Country))
+
+# turning the ID column into row name instead of a column
+samp3 <- subset_pca_no_countryname[,-8]
+rownames(samp3) <- subset_pca_no_countryname[,8]
+
+pr.out3 = prcomp(samp3, scale = TRUE)
+
+pr.out3$rotation
+
+biplot(pr.out3, scale = 0)
+```
+
+# MODELING: SIMPLE LINEAR REGRESSION
+```{r}
+# train and test set
+
+set.seed(123)
+
+index <- sample(1:nrow(mergedata),nrow(mergedata)*0.75)
+train = mergedata[index,]
+test = mergedata[-index,]
+
+nrow(train)
+nrow(test)
+
+ln_fit <- lm(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train)
+
+summary(ln_fit)
+plot(ln_fit)
+ano_result <- anova(ln_fit)
+#ano_result$`Mean Sq`[8] # residual mean sqrt error for the test set. 
+
+train_MSE = mean(ln_fit$residuals)^2
+train_MSE
+
+# applying the linear model to the test set: 
+test_pred <- predict(ln_fit, test)
+test_MSE <- (mean(test$Max_Partners-test_pred)^2)
+test_MSE
+```
+
+
+# MODELING: Best Subset Selection
+
+```{r}
+library(leaps)
+
+regfit.full = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train)
+
+summary(regfit.full)
+
+reg.summary = summary(regfit.full)
+names(reg.summary)
+
+reg.summary$rsq
+
+par(mfrow = c(2,2))
+plot(reg.summary$rss, xlab = "Number of Variables", ylab = "RSS", type = "l")
+plot(reg.summary$adjr2, xlab = "Number of Variables", ylab = "Adjusted RSq", type = "l")
+p_max = which.max(reg.summary$adjr2)
+points(p_max,reg.summary$adjr2[p_max],col="red",cex=2,pch=20)
+
+plot(reg.summary$cp, xlab = "Number of Variables",ylab = "Cp", type ='l')
+cp_min = which.min(reg.summary$cp)
+points(cp_min, reg.summary$cp[cp_min], col ="red", cex = 2, pch = 20)
+
+plot(reg.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
+bic_min = which.min(reg.summary$bic)
+points(bic_min,reg.summary$bic[bic_min], col = "red", cex=2, pch=20)
+
+#coef(regfit.full,bic_min)
+
+```
+# Modeling: Forward Stepwise Selection
+```{r}
+regfit.fwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "forward")
+
+regfwd.summary = summary(regfit.fwd)
+
+par(mfrow = c(2,2))
+plot(regfwd.summary$rss, xlab = "Number of Variables", ylab = "RSS", type = "l")
+plot(regfwd.summary$adjr2, xlab = "Number of Variables", ylab = "Adjusted RSq", type = "l")
+pfwd_max = which.max(reg.summary$adjr2)
+points(pfwd_max,regfwd.summary$adjr2[pfwd_max],col="red",cex=2,pch=20)
+
+plot(regfwd.summary$cp, xlab = "Number of Variables",ylab = "Cp", type ='l')
+cpfwd_min = which.min(regfwd.summary$cp)
+points(cpfwd_min, regfwd.summary$cp[cpfwd_min], col ="red", cex = 2, pch = 20)
+
+plot(regfwd.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
+bicfwd_min = which.min(regfwd.summary$bic)
+points(bicfwd_min,regfwd.summary$bic[bic_min], col = "red", cex=2, pch=20)
+
+# majority vote here: BIC and Cp choose 6 var for best model
+coef(regfit.fwd,6)
+
+```
+
+# Modeling: Backward Stepwise Selection
+
+```{r}
+regfit.bwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "backward")
+
+regbwd.summary = summary(regfit.bwd)
+
+par(mfrow = c(2,2))
+plot(regbwd.summary$rss, xlab = "Number of Variables", ylab = "RSS", type = "l")
+plot(regbwd.summary$adjr2, xlab = "Number of Variables", ylab = "Adjusted RSq", type = "l")
+pbwd_max = which.max(reg.summary$adjr2)
+points(pbwd_max,regbwd.summary$adjr2[pbwd_max],col="red",cex=2,pch=20)
+
+plot(regbwd.summary$cp, xlab = "Number of Variables",ylab = "Cp", type ='l')
+cpbwd_min = which.min(regbwd.summary$cp)
+points(cpbwd_min, regbwd.summary$cp[cpbwd_min], col ="red", cex = 2, pch = 20)
+
+plot(regbwd.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
+bicbwd_min = which.min(regbwd.summary$bic)
+points(bicbwd_min,regbwd.summary$bic[bic_min], col = "red", cex=2, pch=20)
+
+# majority vote here: BIC and Cp choose 6 var for best model
+coef(regfit.bwd,6)
+```
+
+```{r}
+
+coef(ln_fit, 7)
+
+coef(regfit.full,6)
+
+coef(regfit.fwd,6)
+
+coef(regfit.bwd,6)
+
+```
+# Modeling: Ridge Regression
+
+```{r}
+library(glmnet)
+
+x = model.matrix(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = mergedata)[,-1]
+y = mergedata$Max_Partners
+grid = 10^ seq(10,-2,length = 100)
+
+#ridge.pred = predict(ridge.mod, s=4, data=test)
+#mean((ridge.pred-test$Max_Partners)^2)
+
+set.seed(1)
+
+train_ridge = sample(1:nrow(mergedata), nrow(mergedata)/2)
+test_ridge = (-train_ridge)
+y.test_ridge = y[test_ridge]
+
+ridge.mod = glmnet(x[train_ridge,], y[train_ridge],alpha = 0, lambda = grid)
+ridge.pred = predict(ridge.mod, s=4,newx=x[test_ridge,])
+mean((ridge.pred-y.test_ridge)^2)
+
+# use cross-validation to choose the tuning parameter lambda. 
+
+cv.out = cv.glmnet(x[train_ridge,], y[train_ridge], alpha = 0)
+plot(cv.out)
+bestlam = cv.out$lambda.min
+bestlam
+
+# find the test MSE associated with this bestlam:
+
+ridge.pred = predict(ridge.mod, s=bestlam, newx=x[test_ridge,])
+mean((ridge.pred-y.test_ridge)^2)
+
+```
+
+
+# Modeling: LASSO Regression: 
+
+```{r}
+lasso.mod = glmnet(x[train_ridge,], y[train_ridge], alpha = 1, lambda = grid)
+plot(lasso.mod)
+
+cv.out.lasso = cv.glmnet(x[train_ridge,], y[train_ridge], alpha = 1)
+plot(cv.out.lasso)
+bestlam_lasso = cv.out.lasso$lambda.min
+lasso.pred.lasso = predict(lasso.mod,s=bestlam_lasso,newx=x[test_ridge,])
+
+mean((lasso.pred.lasso-y.test_ridge)^2)
+
+out = glmnet(x,y,alpha = 1, lambda = grid)
+lasso.coef = predict(out, type ="coefficients", s = bestlam_lasso)
+lasso.coef
+
+lasso.coef[lasso.coef!=0]
+```
+
+
+# Modeling: Decision Tree, Bagging, Random Forest, Boosting
+```{r}
+```
+
+
+# Modeling: Polynomial Regression
+```{r}
+poly_fit <- lm(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ log(intl_tourist_arrival) + total_life_exp, data = train)
+
+```
+
+
+# Modeling: SUMMARY- All Methods:
+```{r}
+```
+
