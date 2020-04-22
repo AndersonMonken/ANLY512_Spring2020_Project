@@ -221,7 +221,7 @@ myPlot <- ggplot(data_interactive, aes(mobilesub_per100peeps,Max_Partners, size 
   scale_x_log10() +
   theme_bw()  +
   # gganimate specific bits:
-  labs(title = 'Year: {frame_time}', x = 'Mobile Subscription per 100 people', y ='Number of Trading Partners') +     transition_time(Year) +
+  labs(title = 'Year: {frame_time}', x = 'Mobile Subscription per 100 people', y ='Number of Trading Partners') +           transition_time(Year) +
   ease_aes('linear')
 
 # Save at gif: 
@@ -332,12 +332,12 @@ plot(ln_fit)
 ano_result <- anova(ln_fit)
 #ano_result$`Mean Sq`[8] # residual mean sqrt error for the test set. 
 
-train_MSE = mean(ln_fit$residuals^2)
+train_MSE = mean(ln_fit$residuals)^2
 train_MSE
 
 # applying the linear model to the test set: 
 test_pred <- predict(ln_fit, test)
-test_MSE <- (mean(test$Max_Partners-test_pred)^2)
+test_MSE <- mean((test$Max_Partners-test_pred)^2)
 test_MSE
 ```
 
@@ -370,15 +370,32 @@ plot(reg.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
 bic_min = which.min(reg.summary$bic)
 points(bic_min,reg.summary$bic[bic_min], col = "red", cex=2, pch=20)
 
-coef(regfit.full,bic_min)
+#coef(regfit.full,bic_min)
 
 ```
 # Modeling: Forward Stepwise Selection
 ```{r}
-
 regfit.fwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "forward")
 
-summary(regfit.fwd)
+regfwd.summary = summary(regfit.fwd)
+
+par(mfrow = c(2,2))
+plot(regfwd.summary$rss, xlab = "Number of Variables", ylab = "RSS", type = "l")
+plot(regfwd.summary$adjr2, xlab = "Number of Variables", ylab = "Adjusted RSq", type = "l")
+pfwd_max = which.max(reg.summary$adjr2)
+points(pfwd_max,regfwd.summary$adjr2[pfwd_max],col="red",cex=2,pch=20)
+
+plot(regfwd.summary$cp, xlab = "Number of Variables",ylab = "Cp", type ='l')
+cpfwd_min = which.min(regfwd.summary$cp)
+points(cpfwd_min, regfwd.summary$cp[cpfwd_min], col ="red", cex = 2, pch = 20)
+
+plot(regfwd.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
+bicfwd_min = which.min(regfwd.summary$bic)
+points(bicfwd_min,regfwd.summary$bic[bic_min], col = "red", cex=2, pch=20)
+
+# majority vote here: BIC and Cp choose 6 var for best model
+coef(regfit.fwd,6)
+
 ```
 
 # Modeling: Backward Stepwise Selection
@@ -386,9 +403,37 @@ summary(regfit.fwd)
 ```{r}
 regfit.bwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "backward")
 
-summary(regfit.bwd)
+regbwd.summary = summary(regfit.bwd)
+
+par(mfrow = c(2,2))
+plot(regbwd.summary$rss, xlab = "Number of Variables", ylab = "RSS", type = "l")
+plot(regbwd.summary$adjr2, xlab = "Number of Variables", ylab = "Adjusted RSq", type = "l")
+pbwd_max = which.max(reg.summary$adjr2)
+points(pbwd_max,regbwd.summary$adjr2[pbwd_max],col="red",cex=2,pch=20)
+
+plot(regbwd.summary$cp, xlab = "Number of Variables",ylab = "Cp", type ='l')
+cpbwd_min = which.min(regbwd.summary$cp)
+points(cpbwd_min, regbwd.summary$cp[cpbwd_min], col ="red", cex = 2, pch = 20)
+
+plot(regbwd.summary$bic, xlab = "Number of Variables", ylab = "BIC", type = 'l')
+bicbwd_min = which.min(regbwd.summary$bic)
+points(bicbwd_min,regbwd.summary$bic[bic_min], col = "red", cex=2, pch=20)
+
+# majority vote here: BIC and Cp choose 6 var for best model
+coef(regfit.bwd,6)
 ```
 
+```{r}
+
+coef(ln_fit, 7)
+
+coef(regfit.full,6)
+
+coef(regfit.fwd,6)
+
+coef(regfit.bwd,6)
+
+```
 # Modeling: Ridge Regression
 
 ```{r}
@@ -439,10 +484,117 @@ lasso.pred.lasso = predict(lasso.mod,s=bestlam_lasso,newx=x[test_ridge,])
 
 mean((lasso.pred.lasso-y.test_ridge)^2)
 
-
 out = glmnet(x,y,alpha = 1, lambda = grid)
 lasso.coef = predict(out, type ="coefficients", s = bestlam_lasso)
 lasso.coef
 
 lasso.coef[lasso.coef!=0]
 ```
+
+
+# Modeling: Decision Tree, Bagging, Random Forest, Boosting
+```{r}
+set.seed(1)
+library(randomForest)
+library(tree)
+# Decision Trees: 
+tree.train = tree(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train)
+
+summary(tree.train)
+
+plot(tree.train)
+text(tree.train, prett = 0)
+
+
+
+# Now we use the cv.tree() function to see if pruning the tree will improve performance. 
+cv.train = cv.tree(tree.train)
+plot(cv.train$size,cv.train$dev,type ='b')
+
+prune.train = prune.tree(tree.train, best = 5)
+plot(prune.train)
+text(prune.train, pretty = 0)
+
+# Using pruned tree model to get the MSE
+
+yhat.ptree = predict(prune.train, newdata = test)
+plot(yhat.ptree,test$Max_Partners)
+abline(0,1)
+mse_ptree <- mean((yhat.ptree-test$Max_Partners)^2)
+# Bagging Method:
+
+bag.train = randomForest(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train,mtry = 7, ntree = 25,importance = TRUE)
+
+bag.train
+
+yhat.bag = predict(bag.train, newdata = test)
+plot(yhat.bag, test$Max_Partners)
+abline(0,1)
+mse_bag <- mean((yhat.bag - test$Max_Partners)^2)
+mse_bag
+
+# Random Forest: 
+
+rf.train = randomForest(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, mtry = 2, ntree = 25,importance = TRUE)
+
+yhat.rf = predict(rf.train, newdata = test)
+mse_rf <- mean((yhat.rf - test$Max_Partners) ^ 2)
+mse_rf
+
+importance(rf.train)
+varImpPlot(rf.train)
+```
+
+
+# Modeling: Non-linear Regression
+```{r}
+nonlinear_fit <- lm(Max_Partners ~ mobilesub_per100peeps+ log(intl_tourist_arrival) + log(total_life_exp), data = train)
+
+yhat.nonlinear <- predict(nonlinear_fit,test)
+
+mse_nonlinear <- mean((yhat.nonlinear - test$Max_Partners)^2)
+mse_nonlinear
+
+huxreg(nonlinear_fit) # cool formatting
+```
+
+
+# Modeling: SUMMARY- All Methods:
+```{r}
+# test MSE for every method: 
+test_MSE
+mse_nonlinear
+mse_ptree
+mse_bag
+mse_rf
+
+MSE = c(test_MSE,mse_nonlinear,mse_ptree,mse_bag,mse_rf)
+Model = c('Linear Regression',"Non-Linear Regression","Decision Tree Regression","Bagging", "Random Forest")
+
+cbind(Model, MSE)
+
+
+library(huxtable)
+
+
+ht <- hux(
+        'Model Type' = Model,
+        'Model Equation' = c('A','B','C','D','E'),
+        'Test MSE' = MSE,
+        add_colnames = TRUE
+      )
+
+bold(ht)[1,]           <- TRUE
+bottom_border(ht)[1,]  <- 2
+align(ht)[,2]          <- 'right'
+right_padding(ht)      <- 10
+left_padding(ht)       <- 10
+width(ht)              <- 0.35
+number_format(ht)      <- 2
+
+ht
+
+# https://hughjonesd.github.io/huxtable/
+
+```
+
