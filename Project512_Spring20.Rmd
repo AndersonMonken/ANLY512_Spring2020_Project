@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r}
-mergedata <- read.csv("/Users/vidarithchan/Desktop/MSAnalytics/ANLY 512/merged.csv")
+mergedata <- read.csv("merged.csv")
 
 colnames(mergedata)
 nrow(mergedata)
@@ -158,7 +158,7 @@ library(PerformanceAnalytics)
 res <- cor(mergedata[,3:17])
 round(res, 2)
 
-corrplot(res, type = "upper", order = "hclust", 
+corrplot(res, type = "upper", order = "hclust", digits = 2,
          tl.col = "black", tl.srt = 45)
 
 
@@ -494,6 +494,37 @@ lasso.coef[lasso.coef!=0]
 
 # Modeling: Decision Tree, Bagging, Random Forest, Boosting
 ```{r}
+library(randomForest)
+library(randomForestExplainer)
+set.seed(4240)
+splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.7,list=FALSE)
+test  <- mergedata[-splitIndex,]
+train <- mergedata[splitIndex,]
+
+param_list <- list(mtry = c(4,18), 
+ntree = c(500,750,1000,2500,5000,10000))
+param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
+model_list <- list()
+
+for (i in 1:nrow(param_df_3)){
+  randomForest_model <- randomForest(Max_Partners ~ ., 
+                   data = mergedata %>% select(-Country), 
+                   mtry = param_df_3[i,'mtry'], 
+                   ntree = param_df_3[i,'ntree'])
+  
+  model_list[i] <- randomForest_model
+  
+  pred_train <- predict(randomForest_model,newdata = train)
+  param_df_3[i,'train_rmse'] <- sqrt(sum((pred_train - train$Max_Partners)^2/nrow(train)))
+  
+  pred_test <- predict(randomForest_model,newdata = test)
+  param_df_3[i,'test_rmse'] <- sqrt(sum((pred_test - test$Max_Partners)^2/nrow(test)))
+  
+}
+
+plot_min_depth_distribution(min_depth_distribution(model_list[1]))
+
+plot_min_depth_distribution(min_depth_distribution(model_list[2]))
 ```
 
 
