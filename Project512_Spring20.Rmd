@@ -590,17 +590,26 @@ ggplot(data = decision_df %>% filter(ntree > 1), aes(x = ntree, y = test_rmse, c
 ```
 
 ```{r}
-plot_min_depth_distribution(
-  min_depth_distribution(
-    randomForest(Max_Partners ~ ., 
-                   data = mergedata %>% select(-Country), 
+best_forest <-     randomForest(Max_Partners ~ ., 
+                   data = test %>% select(-Country), 
                    mtry = 4, 
                    ntree = 600
                  )
-  )
-)
+min_depth_frame <- min_depth_distribution(best_forest)
+
+plot_min_depth_distribution(min_depth_frame)
 ```
 
+```{r}
+importance_frame <- measure_importance(best_forest)
+#plot_predict_interaction(best_forest, test, "Intl_tourist_arrival", "mobilesub_per100peeps")
+
+plot_multi_way_importance(importance_frame, size_measure = "no_of_nodes")
+```
+
+```{r}
+plot_multi_way_importance(importance_frame, x_measure = "mse_increase", y_measure = "node_purity_increase", size_measure = "p_value", no_of_labels = 5)
+```
 
 # Modeling: Polynomial Regression
 ```{r}
