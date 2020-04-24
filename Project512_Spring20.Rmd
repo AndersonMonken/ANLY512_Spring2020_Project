@@ -158,7 +158,7 @@ library(PerformanceAnalytics)
 res <- cor(mergedata[,3:17])
 round(res, 2)
 
-corrplot(res, type = "upper", order = "hclust", digits = 2,
+corrplot(res, type = "upper", order = "hclust",
          tl.col = "black", tl.srt = 45)
 
 
@@ -318,7 +318,7 @@ biplot(pr.out3, scale = 0)
 
 set.seed(123)
 
-index <- sample(1:nrow(mergedata),nrow(mergedata)*0.75)
+index <- sample(1:nrow(mergedata),nrow(mergedata)*0.70)
 train = mergedata[index,]
 test = mergedata[-index,]
 
@@ -337,7 +337,7 @@ train_MSE
 
 # applying the linear model to the test set: 
 test_pred <- predict(ln_fit, test)
-test_MSE <- (mean(test$Max_Partners-test_pred)^2)
+test_MSE <- mean((test$Max_Partners-test_pred)^2)
 test_MSE
 ```
 
@@ -497,38 +497,9 @@ lasso.coef[lasso.coef!=0]
 library(randomForest)
 library(randomForestExplainer)
 library(caret)
-set.seed(4240)
-splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.7,list=FALSE)
-test  <- mergedata[-splitIndex,]
-train <- mergedata[splitIndex,]
 
 param_list <- list(mtry = c(4,9,18), 
-ntree = c(1,seq(50,1000,50)))
-param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
-model_list <- list()
-
-library(parallel)
-
-
-
-for (i in 1:nrow(param_df_3)){
-  randomForest_model <- randomForest(Max_Partners ~ ., 
-                   data = mergedata %>% select(-Country), 
-                   mtry = param_df_3[i,'mtry'], 
-                   ntree = param_df_3[i,'ntree'])
-  
-  model_list[i] <- randomForest_model
-  
-  pred_train <- predict(randomForest_model,newdata = train)
-  param_df_3[i,'train_rmse'] <- sqrt(sum((pred_train - train$Max_Partners)^2/nrow(train)))
-  
-  pred_test <- predict(randomForest_model,newdata = test)
-  param_df_3[i,'test_rmse'] <- sqrt(sum((pred_test - test$Max_Partners)^2/nrow(test)))
-  
-}
-
-param_list <- list(mtry = c(4,9,18), 
-ntree = c(1,seq(50,1000,10)))
+ntree = c(seq(1,10),seq(20,1000,10)))
 param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
 
 forest_run <- function(i){
@@ -539,28 +510,29 @@ forest_run <- function(i){
   train <- mergedata[splitIndex,]
 
   param_list <- list(mtry = c(4,9,18), 
-  ntree = c(1,seq(50,1000,10)))
+  ntree = c(1,seq(10,1000,10)))
   param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
   list_return <- list()
 
   randomForest_model <- randomForest(Max_Partners ~ ., 
                    data = train %>% select(-Country), 
                    mtry = param_df_3[i,'mtry'], 
-                   ntree = param_df_3[i,'ntree'])
+                   ntree = param_df_3[i,'ntree'],
+                   localImp = TRUE)
   
   list_return$model <- randomForest_model
 
   pred_train <- predict(randomForest_model,data = train)
-  list_return$train_rmse <- sqrt(sum((pred_train - train$Max_Partners)^2/nrow(train)))
+  list_return$train_mse <- sum((pred_train - train$Max_Partners)^2/nrow(train))
   
 
   pred_test <- predict(randomForest_model,newdata = test)
-  list_return$test_rmse <- sqrt(sum((pred_test - test$Max_Partners)^2/nrow(test)))
+  list_return$test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test))
   return(list_return)
 }
 
 ###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
-result_list <- mclapply(X = 1:nrow(param_df_3), FUN = forest_run, mc.cores = 24)
+result_list_forest <- mclapply(X = 1:nrow(param_df_3), FUN = forest_run, mc.cores = 20)
 ```
 
 
@@ -568,47 +540,140 @@ result_list <- mclapply(X = 1:nrow(param_df_3), FUN = forest_run, mc.cores = 24)
 
 # Gathering results
 model_vec <- c()
-test_rmse_vec <- c()
-train_rmse_vec <- c()
-for (i in 1:length(result_list)){
-  model_vec <- c(model_vec, result_list[[i]][['model']])
-  test_rmse_vec <- c(test_rmse_vec, result_list[[i]][['test_rmse']])
-  train_rmse_vec <- c(train_rmse_vec, result_list[[i]][['train_rmse']])
+test_mse_vec <- c()
+train_mse_vec <- c()
+for (i in 1:length(result_list_forest)){
+  model_vec <- c(model_vec, result_list_forest[[i]][['model']])
+  test_mse_vec <- c(test_mse_vec, result_list_forest[[i]][['test_mse']])
+  train_mse_vec <- c(train_mse_vec, result_list_forest[[i]][['train_mse']])
 }
 decision_df <- param_df_3
-decision_df['test_rmse'] <- test_rmse_vec
-decision_df['train_rmse'] <- train_rmse_vec
+decision_df['test_mse'] <- test_mse_vec
+decision_df['train_mse'] <- train_mse_vec
 
 # making plot of trees to error
-ggplot(data = decision_df %>% filter(ntree > 1), aes(x = ntree, y = test_rmse, color = as.factor(mtry))) + 
+plot_testerrorrandom <- ggplot(data = decision_df %>% filter(ntree > 1), aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
   geom_line(size = 1.1) +
-  ylab("Test RMSE") + 
+  ylab("Test MSE") + 
   xlab("Number of Trees") + 
   ggtitle("Test Error as a Function of Tree #") +
-  scale_color_manual(values = c("4" = "blue", "9" = "goldenrod", "18" = "firebrick"), labels = c(expression("m = sqrt(p), 4", "m = p/2, 9","m = p, 18"))) +
-  theme(legend.title = element_blank())
+  scale_color_manual(values = c("4" = "blue", "9" = "goldenrod", "18" = "forestgreen"), labels = c(expression("m = sqrt(p), 4", "m = p/2, 9","m = p, 18"))) +
+  theme(legend.title = element_blank()) + 
+  geom_point(data = data.frame(y = 76.119, x = 820), aes(x = x, y = y), color = "red", size = 5, shape = 2)
+
+
+plot_testerrorrandom_zoom <- ggplot(data = decision_df %>% filter(ntree > 1), aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
+  geom_line(size = 1.1) +
+  ylab("Test MSE") + 
+  xlab("Number of Trees") + 
+  ggtitle("Test Error as a Function of Tree #") +
+  scale_color_manual(values = c("4" = "blue", "9" = "goldenrod", "18" = "forestgreen"), labels = c(expression("m = sqrt(p), 4", "m = p/2, 9","m = p, 18"))) +
+  theme(legend.title = element_blank()) + 
+  geom_point(data = data.frame(y = 76.119, x = 820), aes(x = x, y = y), color = "red", size = 5, shape = 2)
+
+plot_testerrorrandom
+ggsave('forest_testerror_plot.png',plot_testerrorrandom, height = 6, width = 8)
 ```
 
 ```{r}
+set.seed(4240)
 best_forest <-     randomForest(Max_Partners ~ ., 
-                   data = test %>% select(-Country), 
+                   data = train %>% select(-Country), 
                    mtry = 4, 
-                   ntree = 600
+                   ntree = 820,
+                   localImp = TRUE
                  )
 min_depth_frame <- min_depth_distribution(best_forest)
 
-plot_min_depth_distribution(min_depth_frame)
+plot_depth <- plot_min_depth_distribution(min_depth_frame)
+plot_depth
+ggsave('forest_depth_plot.png',plot_depth, height = 6, width = 8)
 ```
 
 ```{r}
 importance_frame <- measure_importance(best_forest)
 #plot_predict_interaction(best_forest, test, "Intl_tourist_arrival", "mobilesub_per100peeps")
 
-plot_multi_way_importance(importance_frame, size_measure = "no_of_nodes")
+plot_importance <- plot_multi_way_importance(importance_frame, x_measure = "mse_increase", size_measure = "no_of_nodes")
+plot_importance
+ggsave('forest_plot_importance.png',plot_importance, height = 6, width = 8)
+```
+
+
+# GBM Modeling
+
+```{r}
+library("gbm")
+
+param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
+                   shrinkage = c(1,0.1,0.01,0.001),
+                   ntree = c(1,seq(10,1500,10))
+                 )
+param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
+  
+gbm_run <- function(i){
+  mergedata <- read.csv("merged.csv")
+  set.seed(4240)
+  splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.7,list=FALSE)
+  test  <- mergedata[-splitIndex,]
+  train <- mergedata[splitIndex,]
+
+  param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
+                   shrinkage = c(1,0.1,0.01,0.001),
+                   ntree = c(1,seq(10,1500,10))
+                   )
+  param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
+  list_return <- list()
+
+  gbm_model <- gbm(Max_Partners ~ ., 
+                   data = train %>% select(-Country), 
+                   distribution = 'gaussian', 
+                   n.trees = param_df_3[i,'ntree'], 
+                   interaction.depth = param_df_3[i,'interaction.depth'], 
+                   shrinkage = param_df_3[i,'shrinkage'])
+
+  pred_train <- predict(gbm_model,data = train, n.trees = param_df_3[i,'ntree'])
+  list_return$train_mse <- sum((pred_train - train$Max_Partners)^2/nrow(train))
+  
+
+  pred_test <- predict(gbm_model,newdata = test, n.trees = param_df_3[i,'ntree'])
+  list_return$test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test))
+  return(list_return)
+}
+
+###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
+result_list_gbm <- mclapply(X = 1:nrow(param_df_3), FUN = gbm_run, mc.cores = 20)
+```
+
+
+
+
+```{r}
+# Gathering results
+model_vec <- c()
+test_mse_vec <- c()
+train_mse_vec <- c()
+for (i in 1:length(result_list_gbm)){
+  model_vec <- c(model_vec, result_list_gbm[[i]][['model']])
+  test_mse_vec <- c(test_mse_vec, result_list_gbm[[i]][['test_mse']])
+  train_mse_vec <- c(train_mse_vec, result_list_gbm[[i]][['train_mse']])
+}
+decision_df_gbm <- param_df_3
+decision_df_gbm['test_mse'] <- test_mse_vec
+decision_df_gbm['train_mse'] <- train_mse_vec
+
+ggplot(data = decision_df_gbm, aes( x = ntree, y = test_mse, color = as.factor(interaction.depth))) + 
+  geom_point() + xlab("Number of Trees") + ylab("Test MSE") +
+  ggtitle("GBM Hyperparameter Analysis") + facet_wrap(~shrinkage) + scale_color_brewer() +
+  geom_point(data = data.frame(y = 68.42, x = 1480, shrinkage = 0.1), aes(x = x, y = y), color = "red", size = 5, shape = 2)
 ```
 
 ```{r}
-plot_multi_way_importance(importance_frame, x_measure = "mse_increase", y_measure = "node_purity_increase", size_measure = "p_value", no_of_labels = 5)
+ggplot(data = decision_df_gbm %>% filter(test_mse < 100), aes( x = ntree, y = test_mse, color = as.factor(interaction.depth))) + 
+  geom_point() + xlab("Number of Trees") + ylab("Test MSE") +
+  ggtitle("GBM Hyperparameter Analysis") + facet_wrap(~shrinkage) + scale_color_brewer() +
+  geom_point(data = data.frame(y = 68.42, x = 1480, shrinkage = 0.1), aes(x = x, y = y), color = "red", size = 5, shape = 2)
+
 ```
 
 # Modeling: Polynomial Regression
