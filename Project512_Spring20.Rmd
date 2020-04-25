@@ -499,7 +499,7 @@ library(randomForestExplainer)
 library(caret)
 
 param_list <- list(mtry = c(4,9,18), 
-ntree = c(seq(1,299),seq(300,1000,10)))
+ntree = c(1,seq(2,280,2),seq(300,1000,25)))
 param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
 
 forest_run <- function(i){
@@ -510,8 +510,9 @@ forest_run <- function(i){
   train <- mergedata[splitIndex,]
 
   param_list <- list(mtry = c(4,9,18), 
-  ntree = c(seq(1,299),seq(300,1000,10)))
+  ntree = c(1,seq(2,280,2),seq(300,1000,25)))
   param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
+
   list_return <- list()
 
   randomForest_model <- randomForest(Max_Partners ~ ., 
@@ -531,6 +532,7 @@ forest_run <- function(i){
 
 ###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
 result_list_forest <- mclapply(X = 1:nrow(param_df_3), FUN = forest_run, mc.cores = 20)
+
 ```
 
 
