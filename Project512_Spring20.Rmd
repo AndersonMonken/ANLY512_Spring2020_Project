@@ -499,7 +499,7 @@ library(randomForestExplainer)
 library(caret)
 
 param_list <- list(mtry = c(4,9,18), 
-ntree = c(seq(1,10),seq(20,1000,10)))
+ntree = c(seq(1,299),seq(300,1000,10)))
 param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
 
 forest_run <- function(i){
@@ -510,7 +510,7 @@ forest_run <- function(i){
   train <- mergedata[splitIndex,]
 
   param_list <- list(mtry = c(4,9,18), 
-  ntree = c(1,seq(10,1000,10)))
+  ntree = c(seq(1,299),seq(300,1000,10)))
   param_df_3 <- do.call(expand.grid, param_list) %>% mutate(test_rmse = 0, train_rmse = 0)
   list_return <- list()
 
@@ -520,8 +520,6 @@ forest_run <- function(i){
                    ntree = param_df_3[i,'ntree'],
                    localImp = TRUE)
   
-  list_return$model <- randomForest_model
-
   pred_train <- predict(randomForest_model,data = train)
   list_return$train_mse <- sum((pred_train - train$Max_Partners)^2/nrow(train))
   
@@ -552,7 +550,7 @@ decision_df['test_mse'] <- test_mse_vec
 decision_df['train_mse'] <- train_mse_vec
 
 # making plot of trees to error
-plot_testerrorrandom <- ggplot(data = decision_df %>% filter(ntree > 1), aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
+plot_testerrorrandom <- ggplot(data = decision_df, aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
   geom_line(size = 1.1) +
   ylab("Test MSE") + 
   xlab("Number of Trees") + 
