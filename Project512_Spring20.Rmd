@@ -159,7 +159,7 @@ res <- cor(mergedata[,3:17])
 round(res, 2)
 
 corrplot(res, type = "upper", order = "hclust",
-         tl.col = "black", tl.srt = 45)
+         tl.col = "black", tl.srt = 45, hc.order = TRUE)
 
 
 chart.Correlation(res, histogram=TRUE, pch=19)
@@ -581,6 +581,51 @@ result_list_forest <- mclapply(X = 1:nrow(param_df_forest), FUN = forest_run, mc
 
 ```
 
+```{r}
+library(randomForest)
+library(randomForestExplainer)
+library(caret)
+library(parallel)
+
+param_list <- list(mtry = c(4,8,16), 
+ntree = c(1,seq(2,500,2)))
+param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
+
+forest_run <- function(i){
+  mergedata <-  select(read.csv("merged.csv"),-Country, -life_exp_male, -life_expectancy_fe)
+  set.seed(123)
+  splitIndex <- sample(1:5, nrow(mergedata), replace = TRUE)
+  
+  temp_test_mse <- 0
+  list_return <- list()
+  param_list <- list(mtry = c(4,8,16), 
+  ntree = c(1,seq(2,500,2)))
+  param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0)
+
+  for (iter in 1:5){
+    test  <- mergedata[splitIndex != iter,]
+    train <- mergedata[splitIndex == iter,]
+    
+
+
+    randomForest_model <- randomForest(Max_Partners ~ ., 
+                     data = train, 
+                     mtry = param_df_forest[i,'mtry'], 
+                     ntree = param_df_forest[i,'ntree'],
+                     localImp = TRUE)
+    
+    pred_test <- predict(randomForest_model,newdata = test)
+    temp_test_mse <- temp_test_mse +  sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
+  }
+  list_return$test_mse <- temp_test_mse / 5
+  
+  return(list_return)
+}
+
+###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
+result_list_forest <- mclapply(X = 1:nrow(param_df_forest), FUN = forest_run, mc.cores = 24)
+
+```
 
 ```{r}
 
@@ -598,20 +643,20 @@ decision_df['test_mse'] <- test_mse_vec
 decision_df['train_mse'] <- train_mse_vec
 
 # making plot of trees to error
-plot_testerrorrandom <- ggplot(data = decision_df, aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
-  geom_vline(xintercept = 200, linetype = 'dashed') + 
+plot_testerrorrandom <- ggplot(data = decision_df %>% mutate(mtry = as.factor(mtry)), aes(x = ntree, y = test_mse, color = mtry)) + 
+  geom_vline(xintercept = 150, linetype = 'dashed') + 
   geom_line(size = 1.1) +
-  ylab("Test MSE") + 
+  ylab("CV Test MSE") + 
   xlab("Number of Trees") + 
   ggtitle("Test Error as a Function of Forest Size") +
   scale_color_manual(values = c("4" = "blue", "8" = "goldenrod", "16" = "forestgreen"), labels = c(expression("m = sqrt(p), 4", "m = p/2, 8","m = p, 16"))) +
-  theme_bw() +
-  theme(legend.title = element_blank()) + ylim(60,100)
+  theme_bw() + ylim(230,300)
+  theme(legend.title = element_blank())
 
 
-plot_testerrorrandom_zoom <- ggplot(data = decision_df %>% filter(ntree > 10 & ntree < 150), aes(x = ntree, y = test_mse, color = as.factor(mtry))) + 
+plot_testerrorrandom_zoom <- ggplot(data = decision_df %>% filter(ntree > 10 & ntree < 150) %>% mutate(mtry = as.factor(mtry)), aes(x = ntree, y = test_mse, color = mtry)) + 
   geom_line(size = 1.1) +
-  ylab("Test MSE") + 
+  ylab("CV Test MSE") + 
   xlab("Number of Trees") + 
   ggtitle("Test Error as a Function of Tree #") +
   scale_color_manual(values = c("4" = "blue", "9" = "goldenrod", "18" = "forestgreen"), labels = c(expression("m = sqrt(p), 4", "m = p/2, 9","m = p, 18"))) +
@@ -633,13 +678,13 @@ train <- mergedata[splitIndex,]
 best_forest <-     randomForest(Max_Partners ~ ., 
                    data = train, 
                    mtry = 4, 
-                   ntree = 200,
+                   ntree = 150,
                    localImp = TRUE
                  )
 best_bag <-     randomForest(Max_Partners ~ ., 
                    data = train, 
                    mtry = 16, 
-                   ntree = 200,
+                   ntree = 150,
                    localImp = TRUE
                  )
 min_depth_frame_forest <- min_depth_distribution(best_forest)
@@ -677,6 +722,55 @@ ggsave('bag_forest_plots2.png',figure2, height = 5, width = 12)
 
 
 # GBM Modeling
+
+```{r}
+library("gbm")
+
+param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
+                   shrinkage = c(0.5,0.1,0.01,0.001),
+                   ntree = c(seq(10,2000,10))
+                 )
+param_df_gbm <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
+  
+gbm_run <- function(i){
+  mergedata <- read.csv("merged.csv") %>% select(-Country, -life_exp_male, -life_expectancy_fe)
+  set.seed(123)
+  
+
+  param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
+                   shrinkage = c(1,0.1,0.01,0.001),
+                   ntree = c(seq(10,2000,10))
+                   )
+  param_df_gbm <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
+  
+  splitIndex <- sample(1:5, nrow(mergedata), replace = TRUE)
+  
+  list_return <- list()
+  temp_test_mse <- 0
+  for (iter in 1:5){
+
+    test  <- mergedata[splitIndex != iter,]
+    train <- mergedata[splitIndex == iter,]
+    
+    gbm_model <- gbm(Max_Partners ~ ., 
+                   data = train, 
+                   distribution = 'gaussian', 
+                   n.trees = param_df_gbm[i,'ntree'], 
+                   interaction.depth = param_df_gbm[i,'interaction.depth'], 
+                   shrinkage = param_df_gbm[i,'shrinkage'])
+
+
+    pred_test <- predict(gbm_model,newdata = test, n.trees = param_df_gbm[i,'ntree'])
+    temp_test_mse <- temp_test_mse + sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
+  }
+  list_return$test_mse <- temp_test_mse / 5
+  
+  return(list_return)
+}
+
+###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
+result_list_gbm <- mclapply(X = 1:nrow(param_df_gbm), FUN = gbm_run, mc.cores = 24)
+```
 
 ```{r}
 library("gbm")
@@ -722,8 +816,6 @@ result_list_gbm <- mclapply(X = 1:nrow(param_df_gbm), FUN = gbm_run, mc.cores = 
 ```
 
 
-
-
 ```{r}
 # Gathering results
 model_vec <- c()
@@ -741,16 +833,16 @@ decision_df_gbm['train_mse'] <- train_mse_vec
 my_colors = brewer.pal(n = 11, "RdBu")[c(1:4,8:11)] #there are 9, I exluded the two lighter hues
 
 gbm_plot <- ggplot(data = decision_df_gbm %>% mutate(interaction.depth = as.factor(interaction.depth)), aes( x = ntree, y = test_mse, color =  interaction.depth)) + 
-  geom_line() + xlab("Number of Trees") + ylab("Test MSE") +
+  geom_line() + xlab("Number of Trees") + ylab("CV Test MSE") +
   ggtitle("GBM Hyperparameter Analysis") + facet_wrap(~shrinkage, labeller = label_both) + scale_color_manual(values = my_colors)
 ggsave('gbm_plot.png',gbm_plot, height = 4, width = 5)
 ```
 
 ```{r}
-gbm_plot_zoom <- ggplot(data = decision_df_gbm %>% mutate(interaction.depth = as.factor(interaction.depth)) %>% filter(shrinkage == 0.1), aes( x = ntree, y = test_mse, color =  interaction.depth)) + 
-  geom_line() + xlab("Number of Trees") + ylab("Test MSE") +
-  ggtitle("GBM Shrinkage=0.1") + scale_color_manual(values = my_colors) + ylim(70,100) + 
-  geom_point(data = data.frame(y = 76.21, x = 1500), aes(x = x, y = y), color = "red", size = 5, shape = 2)
+gbm_plot_zoom <- ggplot(data = decision_df_gbm %>% mutate(interaction.depth = as.factor(interaction.depth)) %>% filter(shrinkage %in% c(0.1,0.01)), aes( x = ntree, y = test_mse, color =  interaction.depth)) + 
+  geom_line() + xlab("Number of Trees") + ylab("CV Test MSE") +
+  ggtitle("GBM Zoom") + scale_color_manual(values = my_colors) + facet_wrap(~shrinkage, labeller = label_both) + ylim(200,360) + 
+  geom_point(data = data.frame(y = 76.21, x = 1900), aes(x = x, y = y), color = "red", size = 5, shape = 2)+ theme(legend.position = "none")
 
 ggsave('gbm_plot_zoom.png',gbm_plot_zoom, height = 4, width = 5)
 ```
@@ -766,25 +858,19 @@ ggsave('gbm_plot_zoom.png',gbm_plot_zoom, height = 4, width = 5)
   gbm_model <- gbm(Max_Partners ~ ., 
                    data = train %>% select(-Country, -life_exp_male, -life_expectancy_fe), 
                    distribution = 'gaussian', 
-                   n.trees = 1500, 
-                   interaction.depth = 7, 
-                   shrinkage = 0.1)
+                   n.trees = 2000, 
+                   interaction.depth = 8, 
+                   shrinkage = 0.01)
 
 summary_gbm_importance <- summary(gbm_model)
 
-gbm_importance <- ggplot(summary_gbm_importance, aes(x = reorder(var, rel.inf),y=rel.inf)) + geom_col(fill = 'darkblue') + coord_flip() + ylab("Relative Importance") + xlab("Variable") + ggtitle("Variable Importance in Best GBM Model")
+gbm_importance <- ggplot(summary_gbm_importance %>% filter(rel.inf > 1), aes(x = reorder(var, rel.inf),y=rel.inf)) + geom_col(fill = 'darkblue') + coord_flip() + ylab("Relative Importance") + xlab("Variable") + ggtitle("Variable Importance in Best GBM Model")
 ggsave('gbm_plot_importance.png',gbm_importance, height = 4, width = 5)
 ```
 
 
 # Modeling: splines Regression
 ```{r}
-
-mergedata <- read.csv("merged.csv")
-set.seed(123)
-splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.75,list=FALSE)
-test  <- mergedata[-splitIndex,]
-train <- mergedata[splitIndex,]
 
 spline_fit <- lm(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ ns(intl_tourist_arrival, 3) + total_life_exp, data = train)
 summary(spline_fit)
