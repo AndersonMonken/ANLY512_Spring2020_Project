@@ -38,7 +38,7 @@ Code: Merging_Data.ipynb
 Cleaned data: merged.csv
 
 ## Models and Visualizations:
-Code: Project512_Spring20.Rmd
+Code: Project512_Spring20.Rmd, Project512_Spring20.html
 
 Visualizations: in folder
 
