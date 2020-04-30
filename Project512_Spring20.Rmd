@@ -1,5 +1,12 @@
 ---
 title: "Project 512 Spring 2020"
+author: "Vid Chan, Anderson Monken, Doug Neumann, Nicole Yoder"
+date: "4/30/2020"
+output: html_document
+---
+
+---
+title: "Project 512 Spring 2020"
 author: "Vid Chan"
 date: "4/18/2020"
 output: html_document
@@ -28,6 +35,7 @@ summary(mergedata$Max_Partners)
 library(dplyr)
 library(tidyverse)
 library(ggplot2)
+library(caret)
 #####################################
 
 mergedata_2016 <- subset(mergedata, Year == 2016, select = c(Country,Max_Partners, Year))
@@ -158,8 +166,8 @@ library(PerformanceAnalytics)
 res <- cor(mergedata[,3:17])
 round(res, 2)
 
-corrplot(res, type = "upper", order = "hclust",
-         tl.col = "black", tl.srt = 45, hc.order = TRUE)
+corrplot(res, type = "upper", order = "hclust", 
+         tl.col = "black", tl.srt = 45)
 
 
 chart.Correlation(res, histogram=TRUE, pch=19)
@@ -229,26 +237,6 @@ animate(myPlot, duration = 5, fps = 20, width = 350, height = 200, renderer = gi
 anim_save("output.gif")
 ```
 
-```{r}
-library(gapminder)
-library(gganimate)
-library(gifski)
-
-## standard ggplot2
-myPlot <- ggplot(gapminder, aes(gdpPercap, lifeExp, size = pop, colour = country)) +
-  geom_point(alpha = 0.7, show.lemobilesub_per100peepsgend = FALSE) +
-  scale_colour_manual(values = country_colors) +
-  scale_size(range = c(2, 12)) +
-  scale_x_log10() +
-  # Here comes the gganimate specific bits
-  labs(title = 'Year: {frame_time}', x = 'GDP per capita', y = 'life expectancy') +
-  transition_time(year) +
-  ease_aes('linear')
-
-animate(myPlot, duration = 5, fps = 20, width = 200, height = 200, renderer = gifski_renderer())
-anim_save("output.gif")
-
-```
 # Principal Component Analysis:
 
 ```{r}
@@ -312,42 +300,18 @@ pr.out3$rotation
 biplot(pr.out3, scale = 0)
 ```
 
-# MODELING: SIMPLE LINEAR REGRESSION
+# Train and Test Set Split:
 ```{r}
-library(stargazer)
 # train and test set
 
 set.seed(123)
 
-index <- sample(1:nrow(mergedata),nrow(mergedata)*0.70)
+index <- sample(1:nrow(mergedata),nrow(mergedata)*0.75)
 train = mergedata[index,]
 test = mergedata[-index,]
 
 nrow(train)
 nrow(test)
-
-ln_fit <- lm(Max_Partners ~ ., data = train %>% select(-Country))
-
-summary(ln_fit)
-```
-
-```{r}
-stargazer(ln_fit, type = 'text')
-```
-
-```{r}
-plot(ln_fit)
-
-ano_result <- anova(ln_fit)
-#ano_result$`Mean Sq`[8] # residual mean sqrt error for the test set. 
-
-train_MSE = mean(ln_fit$residuals)^2
-train_MSE
-
-# applying the linear model to the test set: 
-test_pred <- predict(ln_fit, test)
-test_MSE <- mean((test$Max_Partners-test_pred)^2)
-test_MSE
 ```
 
 
@@ -356,7 +320,7 @@ test_MSE
 ```{r}
 library(leaps)
 
-regfit.full = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train)
+regfit.full = regsubsets(Max_Partners ~ Year + GDP_per_unit_CO2 + PPP_Conv_Rate + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp + agg.empl.agri.perc + rural.pop.perc, data = train)
 
 summary(regfit.full)
 
@@ -382,9 +346,10 @@ points(bic_min,reg.summary$bic[bic_min], col = "red", cex=2, pch=20)
 #coef(regfit.full,bic_min)
 
 ```
+
 # Modeling: Forward Stepwise Selection
 ```{r}
-regfit.fwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "forward")
+regfit.fwd = regsubsets(Max_Partners ~ Year + GDP_per_unit_CO2 + PPP_Conv_Rate + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp + agg.empl.agri.perc + rural.pop.perc, data = train, method = "forward")
 
 regfwd.summary = summary(regfit.fwd)
 
@@ -410,7 +375,7 @@ coef(regfit.fwd,6)
 # Modeling: Backward Stepwise Selection
 
 ```{r}
-regfit.bwd = regsubsets(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = train, method = "backward")
+regfit.bwd = regsubsets(Max_Partners ~ Year + GDP_per_unit_CO2 + PPP_Conv_Rate + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp + agg.empl.agri.perc + rural.pop.perc, data = train, method = "backward")
 
 regbwd.summary = summary(regfit.bwd)
 
@@ -432,23 +397,12 @@ points(bicbwd_min,regbwd.summary$bic[bic_min], col = "red", cex=2, pch=20)
 coef(regfit.bwd,6)
 ```
 
-```{r}
-
-coef(ln_fit, 7)
-
-coef(regfit.full,6)
-
-coef(regfit.fwd,6)
-
-coef(regfit.bwd,6)
-
-```
 # Modeling: Ridge Regression
 
 ```{r}
 library(glmnet)
 
-x = model.matrix(Max_Partners ~GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ intl_tourist_arrival + total_life_exp, data = mergedata)[,-1]
+x = model.matrix(Max_Partners ~ Year + GDP_per_unit_CO2 + PPP_Conv_Rate + Govt_Revenue + gdp_per_cap+ intl_tourist_arrival + agri_perc_gdp+ rural.pop.perc, data = mergedata)[,-1]
 y = mergedata$Max_Partners
 grid = 10^ seq(10,-2,length = 100)
 
@@ -475,7 +429,11 @@ bestlam
 # find the test MSE associated with this bestlam:
 
 ridge.pred = predict(ridge.mod, s=bestlam, newx=x[test_ridge,])
-mean((ridge.pred-y.test_ridge)^2)
+mse_ridge = mean((ridge.pred-y.test_ridge)^2)
+mse_ridge
+
+out.ridge = glmnet(x,y, alpha = 0)
+predict(out.ridge,type = "coefficients",s = bestlam)
 
 ```
 
@@ -491,7 +449,8 @@ plot(cv.out.lasso)
 bestlam_lasso = cv.out.lasso$lambda.min
 lasso.pred.lasso = predict(lasso.mod,s=bestlam_lasso,newx=x[test_ridge,])
 
-mean((lasso.pred.lasso-y.test_ridge)^2)
+mse_lasso <- mean((lasso.pred.lasso-y.test_ridge)^2)
+mse_lasso
 
 out = glmnet(x,y,alpha = 1, lambda = grid)
 lasso.coef = predict(out, type ="coefficients", s = bestlam_lasso)
@@ -500,6 +459,28 @@ lasso.coef
 lasso.coef[lasso.coef!=0]
 ```
 
+# Model: Linear Regression:
+
+```{r}
+ln_fit <- lm(Max_Partners ~ Year + GDP_per_unit_CO2 + PPP_Conv_Rate + Govt_Revenue + gdp_per_cap+ intl_tourist_arrival + agri_perc_gdp+ rural.pop.perc, data = train)
+
+summary(ln_fit)
+plot(ln_fit)
+ano_result <- anova(ln_fit)
+#ano_result$`Mean Sq`[8] # residual mean sqrt error for the test set. 
+
+library(sjPlot)
+tab_model(ln_fit)
+
+
+train_MSE = mean(ln_fit$residuals)^2
+train_MSE
+
+# applying the linear model to the test set: 
+test_pred <- predict(ln_fit, test)
+test_MSE <- mean((test$Max_Partners-test_pred)^2)
+test_MSE
+```
 
 # Modeling: Decision Tree, Bagging, Random Forest, Boosting
 
@@ -519,7 +500,7 @@ tree_simple <- rpart(Max_Partners ~ ., data=train)
 
 pred_test <- predict(tree_simple,newdata = test)
 tree_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
-print(test_mse)
+print(tree_mse)
 #plot(ctree(Max_Partners ~ ., data=train))
 fancyRpartPlot(tree_simple, caption = 'Full tree')
 savePlotToFile('simple_tree.png')
@@ -543,54 +524,9 @@ library(randomForest)
 library(randomForestExplainer)
 library(caret)
 library(parallel)
-
 param_list <- list(mtry = c(4,8,16), 
 ntree = c(1,seq(2,500,2)))
 param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
-
-forest_run <- function(i){
-  mergedata <-  select(read.csv("merged.csv"),-Country, -life_exp_male, -life_expectancy_fe)
-  set.seed(123)
-  splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.75,list=FALSE)
-  test  <- mergedata[-splitIndex,]
-  train <- mergedata[splitIndex,]
-
-  param_list <- list(mtry = c(4,8,16), 
-  ntree = c(1,seq(2,500,2)))
-  param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
-
-  list_return <- list()
-
-  randomForest_model <- randomForest(Max_Partners ~ ., 
-                   data = train, 
-                   mtry = param_df_forest[i,'mtry'], 
-                   ntree = param_df_forest[i,'ntree'],
-                   localImp = TRUE)
-  
-  pred_train <- predict(randomForest_model,data = train)
-  list_return$train_mse <- sum((pred_train - train$Max_Partners)^2/nrow(train), na.rm = TRUE)
-  
-
-  pred_test <- predict(randomForest_model,newdata = test)
-  list_return$test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
-  return(list_return)
-}
-
-###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
-result_list_forest <- mclapply(X = 1:nrow(param_df_forest), FUN = forest_run, mc.cores = 24)
-
-```
-
-```{r}
-library(randomForest)
-library(randomForestExplainer)
-library(caret)
-library(parallel)
-
-param_list <- list(mtry = c(4,8,16), 
-ntree = c(1,seq(2,500,2)))
-param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
-
 forest_run <- function(i){
   mergedata <-  select(read.csv("merged.csv"),-Country, -life_exp_male, -life_expectancy_fe)
   set.seed(123)
@@ -601,13 +537,10 @@ forest_run <- function(i){
   param_list <- list(mtry = c(4,8,16), 
   ntree = c(1,seq(2,500,2)))
   param_df_forest <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0)
-
   for (iter in 1:5){
     test  <- mergedata[splitIndex != iter,]
     train <- mergedata[splitIndex == iter,]
     
-
-
     randomForest_model <- randomForest(Max_Partners ~ ., 
                      data = train, 
                      mtry = param_df_forest[i,'mtry'], 
@@ -621,10 +554,8 @@ forest_run <- function(i){
   
   return(list_return)
 }
-
 ###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
 result_list_forest <- mclapply(X = 1:nrow(param_df_forest), FUN = forest_run, mc.cores = 24)
-
 ```
 
 ```{r}
@@ -706,8 +637,8 @@ importance_frame_bag <- measure_importance(best_bag)
 plot_importance_bag <- plot_multi_way_importance(importance_frame_bag, x_measure = "mse_increase", size_measure = "no_of_nodes", main = "Bagging: Multi-way Importance Plot")
 plot_importance_forest <- plot_multi_way_importance(importance_frame_forest, x_measure = "mse_increase", size_measure = "no_of_nodes", main = "Forest p = 4: Multi-way Importance Plot")
 #plot_importance_forest
-ggsave('forest_plot_importance.png',plot_importance, height = 6, width = 8)
-ggsave('bag_plot_importance.png',plot_importance, height = 6, width = 8)
+ggsave('forest_plot_importance.png',plot_importance_forest, height = 6, width = 8)
+ggsave('bag_plot_importance.png',plot_importance_bag, height = 6, width = 8)
 
 figure1 <- ggarrange(plot_depth_bag,plot_depth_forest, 
                     ncol = 2, nrow = 1, labels = c("Bagging","Forest p=4"))
@@ -725,6 +656,7 @@ ggsave('bag_forest_plots2.png',figure2, height = 5, width = 12)
 
 ```{r}
 library("gbm")
+library(RColorBrewer)
 
 param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
                    shrinkage = c(0.5,0.1,0.01,0.001),
@@ -773,50 +705,6 @@ result_list_gbm <- mclapply(X = 1:nrow(param_df_gbm), FUN = gbm_run, mc.cores = 
 ```
 
 ```{r}
-library("gbm")
-
-param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
-                   shrinkage = c(1,0.1,0.01,0.001),
-                   ntree = c(1,seq(10,1500,10))
-                 )
-param_df_gbm <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
-  
-gbm_run <- function(i){
-  mergedata <- read.csv("merged.csv")
-  set.seed(123)
-  splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.75,list=FALSE)
-  test  <- mergedata[-splitIndex,]
-  train <- mergedata[splitIndex,]
-
-  param_list <- list(interaction.depth = c(1,2,3,4,5,6,7,8), 
-                   shrinkage = c(1,0.1,0.01,0.001),
-                   ntree = c(1,seq(10,1500,10))
-                   )
-  param_df_gbm <- do.call(expand.grid, param_list) %>% mutate(test_mse = 0, train_mse = 0)
-  list_return <- list()
-
-  gbm_model <- gbm(Max_Partners ~ ., 
-                   data = train %>% select(-Country, -life_exp_male, -life_expectancy_fe), 
-                   distribution = 'gaussian', 
-                   n.trees = param_df_gbm[i,'ntree'], 
-                   interaction.depth = param_df_gbm[i,'interaction.depth'], 
-                   shrinkage = param_df_gbm[i,'shrinkage'])
-
-  pred_train <- predict(gbm_model,data = train, n.trees = param_df_gbm[i,'ntree'])
-  list_return$train_mse <- sum((pred_train - train$Max_Partners)^2/nrow(train))
-  
-
-  pred_test <- predict(gbm_model,newdata = test, n.trees = param_df_gbm[i,'ntree'])
-  list_return$test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test))
-  return(list_return)
-}
-
-###### WARNING DON'T RUN THIS CODE UNLESS YOU HAVE A LOT OF CORES
-result_list_gbm <- mclapply(X = 1:nrow(param_df_gbm), FUN = gbm_run, mc.cores = 20)
-```
-
-
-```{r}
 # Gathering results
 model_vec <- c()
 test_mse_vec <- c()
@@ -836,6 +724,8 @@ gbm_plot <- ggplot(data = decision_df_gbm %>% mutate(interaction.depth = as.fact
   geom_line() + xlab("Number of Trees") + ylab("CV Test MSE") +
   ggtitle("GBM Hyperparameter Analysis") + facet_wrap(~shrinkage, labeller = label_both) + scale_color_manual(values = my_colors)
 ggsave('gbm_plot.png',gbm_plot, height = 4, width = 5)
+
+gbm_plot
 ```
 
 ```{r}
@@ -843,7 +733,7 @@ gbm_plot_zoom <- ggplot(data = decision_df_gbm %>% mutate(interaction.depth = as
   geom_line() + xlab("Number of Trees") + ylab("CV Test MSE") +
   ggtitle("GBM Zoom") + scale_color_manual(values = my_colors) + facet_wrap(~shrinkage, labeller = label_both) + ylim(200,360) + 
   geom_point(data = data.frame(y = 76.21, x = 1900), aes(x = x, y = y), color = "red", size = 5, shape = 2)+ theme(legend.position = "none")
-
+gbm_plot_zoom
 ggsave('gbm_plot_zoom.png',gbm_plot_zoom, height = 4, width = 5)
 ```
 
@@ -866,42 +756,6 @@ summary_gbm_importance <- summary(gbm_model)
 
 gbm_importance <- ggplot(summary_gbm_importance %>% filter(rel.inf > 1), aes(x = reorder(var, rel.inf),y=rel.inf)) + geom_col(fill = 'darkblue') + coord_flip() + ylab("Relative Importance") + xlab("Variable") + ggtitle("Variable Importance in Best GBM Model")
 ggsave('gbm_plot_importance.png',gbm_importance, height = 4, width = 5)
-```
-
-
-# Modeling: splines Regression
-```{r}
-
-spline_fit <- lm(Max_Partners ~ GDP_per_unit_CO2 + Govt_Revenue + gdp_per_cap +agri_perc_gdp + mobilesub_per100peeps+ ns(intl_tourist_arrival, 3) + total_life_exp, data = train)
-summary(spline_fit)
-pred_test <- predict(gam_fit,newdata = test)
-test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
-print(test_mse)
-```
-
-# GAMs
-
-```{r}
-library(gam)
-
-mergedata <- read.csv("merged.csv")
-set.seed(123)
-splitIndex <- createDataPartition(y=1:nrow(mergedata),p=0.75,list=FALSE)
-test  <- mergedata[-splitIndex,]
-train <- mergedata[splitIndex,]
-
-  
-gam_fit <- gam(Max_Partners ~ ns(GDP_per_unit_CO2,5) + Govt_Revenue + gdp_per_cap + ns(agri_perc_gdp,3) + ns(mobilesub_per100peeps,3) + ns(intl_tourist_arrival,3) + ns(total_life_exp,3), data=train)
-summary(gam_fit)
-plot(gam_fit , se=TRUE , col ="red")
-
-pred_test <- predict(gam_fit,newdata = test)
-test_mse <- sum((pred_test - test$Max_Partners)^2/nrow(test), na.rm = TRUE)
-print(test_mse)
-```
-
-# Modeling: SUMMARY- All Methods:
-```{r}
 ```
 
 
